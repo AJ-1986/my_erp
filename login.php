@@ -45,10 +45,10 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                                 </tr>
                             </table>
                         </form>                        
-                    </div>
-                    <div class="login_spacer"></div>
+                    </div>                    
                 </div>
             </div>
+            <div class="login_spacer"></div>
             <div class="login_footer">
                 &copy MY_ERP <?php echo gmdate('Y'); ?>
             </div>
