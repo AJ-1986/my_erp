@@ -39,6 +39,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     </p>
                     <div class="login_form">
                         <form method="post" action="function.php">
+                            <input type="hidden" name="logowanie" value="1">
                             <table class="login_tbl_form">
                                 <tr>
                                     <td class="login_tbl_form">Login:</td>
