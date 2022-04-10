@@ -1,1 +1,105 @@
 /* Główny arkusz styli dla MY_ERP */
+
+/* Część styli przypisanych dla pliku LOGIN.PHP */
+div.login_main_page {
+    margin: 0 auto;    
+    width: 600px;    
+}
+div.login_header {
+    margin-top: 25px;
+    width: 100%;
+}
+h1.login_h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+div.login_central_page {
+    width: 100%;
+    background-color: silver;
+    border: 1px solid gray;
+}
+div.login_main_form {
+    width: 85%;
+    margin: 0 auto;
+}
+p.login_adn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+}
+div.login_form {    
+    margin: 25px auto;
+    width: 100%;   
+}
+table.login_tbl_form {
+    margin: 0 auto;    
+    border: 0;
+}
+td.login_tbl_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+td.login_tbl_form_but {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+}
+
+input[type=text].log_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: gray;
+}
+input[type=password].paswd_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: gray;
+}
+input[type=reset].login_reset {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=reset].login_reset:hover {
+    background-color: gold;
+}
+input[type=submit].login_submit {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=submit].login_submit:hover {
+    background-color: gold;
+}
+div.login_spacer {
+    width: 100%;
+    height: 15px;
+}
+div.login_footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+/* -------------------------------------------- */
