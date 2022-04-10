@@ -34,4 +34,12 @@ if($_POST['logowanie'] == '1') {
 mysqli_close($pol_db);
 }
 
+// funkcja odpowiedzialna za wylogowanie
+if($_GET['wyloguj'] == '1') {
+    session_destroy();
+    echo '
+    <script>
+    document.location="login.php";
+    </script>';
+}
 ?>
