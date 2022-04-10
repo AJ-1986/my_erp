@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            if($_SESSION['log_ok'] == $_SESSION['log_id'])
+            if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
             {
         ?>
         <div class="main_page">
