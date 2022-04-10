@@ -44,4 +44,51 @@ td.login_tbl_form {
     font-size: 14px;
     color: black;
 }
+td.login_tbl_form_but {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+}
+
+input[type=text].log_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: gray;
+}
+input[type=password].paswd_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: gray;
+}
+input[type=reset].login_reset {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=reset].login_reset:hover {
+    background-color: gold;
+}
+input[type=submit].login_submit {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=submit].login_submit:hover {
+    background-color: gold;
+}
 /* -------------------------------------------- */
