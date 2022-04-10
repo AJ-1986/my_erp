@@ -5,5 +5,15 @@ div.login_main_page {
     margin: 0 auto;    
     width: 600px;
 }
-
+div.login_header {
+    margin-top: 25px;
+    width: 100%;
+}
+h1.login_h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
 /* -------------------------------------------- */
