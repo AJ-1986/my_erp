@@ -24,10 +24,10 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
             <div class="login_central_page">
                 <div class="login_main_form">
                     <?php
-                    if($_SESSION['log_ok'] == $_SESSION['log_id'])
+                    if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
                         {
                     ?>
-                    
+
                     <?php
                         }
                         else
