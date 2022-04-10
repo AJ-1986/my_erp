@@ -17,6 +17,18 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
         <link rel="stylesheet" href="main_style.css">
     </head>
     <body>
-        
+        <div class="login_main_page">
+            <div class="login_header">
+
+            </div>
+            <div class="login_main_page">
+                <div class="login_form">
+
+                </div>
+            </div>
+            <div class="login_footer">
+                
+            </div>
+        </div>
     </body>
 </html>
