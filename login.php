@@ -21,7 +21,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
             <div class="login_header">
                 <h1 class="login_h1">MY ERP - logowanie</h1>
             </div>
-            <div class="login_main_page">
+            <div class="login_central_page">
                 <div class="login_main_form">
                     <p class="login_adn">
                         Aby się zalogować wpisz login i hasło użytwkonika.

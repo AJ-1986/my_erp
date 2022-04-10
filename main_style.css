@@ -16,4 +16,9 @@ h1.login_h1 {
     font-weight: bold;
     text-align: center;
 }
+div.login_central_page {
+    width: 100%;
+    background-color: silver;
+    border: 1px solid gray;
+}
 /* -------------------------------------------- */
