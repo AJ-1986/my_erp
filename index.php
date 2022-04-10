@@ -10,6 +10,25 @@
         <link rel="stylesheet" href="main_style.css">
     </head>
     <body>
+        <div class="main_page">
+            <div class="main_header">
+                <div class="header_top_nav">
 
+                </div>
+                <div class="header_main_nav">
+
+                </div>
+            </div>
+            <div class="main_page">
+                <div class="page">
+
+                </div>
+            </div>
+            <div class="main_footer">
+                <div class="footer">
+                    
+                </div>
+            </div>
+        </div>
     </body>
 </html>
