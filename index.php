@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="main_style.css">
     </head>
     <body>
+        <?php
+            if($_SESSION['log_ok'] == $_SESSION['log_id'])
+            {
+        ?>
         <div class="main_page">
             <div class="main_header">
                 <div class="header_top_nav">
@@ -30,5 +34,14 @@
                 </div>
             </div>
         </div>
+        <?php
+            }
+            else
+            {
+                <script>
+                    document.location='login.php';
+                </script>
+            }
+        ?>
     </body>
 </html>
