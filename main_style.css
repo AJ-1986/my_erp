@@ -21,4 +21,8 @@ div.login_central_page {
     background-color: silver;
     border: 1px solid gray;
 }
+div.login_main_form {
+    width: 85%;
+    margin: 0 auto;
+}
 /* -------------------------------------------- */
