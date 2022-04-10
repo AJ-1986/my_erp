@@ -2,6 +2,7 @@
 session_start();
 include './db_config.php'; // plik konfiguracyjny bazy
 
+// funkcja odpowiadająca za poprawne logowanie
 if($_POST['logowanie'] == '1') {
     
     // link do połączenia z bazą danych
