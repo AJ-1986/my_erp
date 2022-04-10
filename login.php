@@ -28,7 +28,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
                         {
                     ?>
-
+                    <a href="function.php?wyloguj=1">Wyloguj</a>
                     <?php
                         }
                         else
