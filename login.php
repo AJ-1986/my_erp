@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './db_config.php'; // plik konfiguracyjny bazy
 
 // link do połączenia z bazą danych
