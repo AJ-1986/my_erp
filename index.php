@@ -38,9 +38,11 @@
             }
             else
             {
+        ?>
                 <script>
                     document.location='login.php';
                 </script>
+        <?php
             }
         ?>
     </body>
