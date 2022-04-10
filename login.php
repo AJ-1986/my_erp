@@ -26,10 +26,11 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     <p class="login_adn">
                         Aby się zalogować wpisz login i hasło użytwkonika.
                     </p>
+
                 </div>
             </div>
             <div class="login_footer">
-                
+                &copy MY_ERP <?php echo gmdate('Y'); ?>
             </div>
         </div>
     </body>
