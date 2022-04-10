@@ -7,4 +7,4 @@ $dbuserpassword = '5PxNyujsPH';         // haslo uzytkownika --//--
 $default_dbname = 'baza23193_my_erp';   // baza danych 
 
 // -------------------------------
->
+?>
