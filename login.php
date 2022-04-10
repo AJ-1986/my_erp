@@ -23,6 +23,16 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
             </div>
             <div class="login_central_page">
                 <div class="login_main_form">
+                    <?php
+                    if($_SESSION['log_ok'] == $_SESSION['log_id'])
+                        {
+                    ?>
+                    
+                    <?php
+                        }
+                        else
+                        {
+                    ?>
                     <p class="login_adn">
                         Aby się zalogować wpisz login i hasło użytkownika.
                     </p>
@@ -45,7 +55,10 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                                 </tr>
                             </table>
                         </form>                        
-                    </div>                    
+                    </div> 
+                    <?php
+                        }
+                    ?>                                       
                 </div>
             </div>
             <div class="login_spacer"></div>
