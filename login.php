@@ -47,6 +47,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                                         <input type="hidden" name="nazwa_podmiot" value="'. $query_data[1] .'">
                                     ';
                                 }
+                                mysqli_close($pol_db);
                             //-----------------------------------
                             ?>
                         </select>
