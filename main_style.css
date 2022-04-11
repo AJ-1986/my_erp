@@ -40,6 +40,13 @@ div.right_site {
     width: 75%;
     float: left;
 }
+div.footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
 /* ----------------------------------------------- */
 
 /* Część styli przypisanych dla pliku LOGIN.PHP */

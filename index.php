@@ -25,15 +25,12 @@ session_start();
                     <a class="link_header" href="funkcje.php?wyloguj=1">Wyloguj</a>
                 </div>                
             </div>            
-                <div class="left_site">
-                </div>
-                <div class="right_site">
-                </div>
-            <div class="main_footer">
-                <div class="footer">
-                    
-                </div>
+            <div class="left_site">
             </div>
+            <div class="right_site">
+            </div>            
+            <div class="footer">                    
+            </div>            
         </div>        
         <?php
             }
