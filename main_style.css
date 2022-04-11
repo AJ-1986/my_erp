@@ -4,7 +4,12 @@
 div.main_page {
     width: 100%;
 }
-
+div.main_header {
+    background-color: darkmagenta;
+    float: left;
+    height: 50px;
+    width: 100%;    
+}
 /* ----------------------------------------------- */
 
 /* Część styli przypisanych dla pliku LOGIN.PHP */
