@@ -1,5 +1,65 @@
 /* Główny arkusz styli dla MY_ERP */
 
+/* Część styli odpowiadających za wygląd INDEX.PHP */
+div.main_page {    
+    width: 100%;    
+}
+div.main_header {
+    background-color: darkmagenta;    
+    height: 70px;
+    width: 100%;
+    float: left;    
+}
+div.logo {    
+    width: 300px;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    float: left;      
+}
+a.link_header {    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: aqua;
+}
+div.right_nav_header {
+    margin-top: 24px;
+    margin-right: 20px;
+    text-align: right;    
+    width: 300px;
+    float: right;
+    color: white;    
+}
+div.left_site {
+    width: 20%;
+    float: left;
+}
+div.right_site {
+    width: 75%;
+    float: left;
+}
+div.footer {
+    margin-top: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    text-align: center;
+    float: left;
+}
+div.index_left_podmiot {
+    width: 100%;
+}
+p.index_left {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+}
+/* ----------------------------------------------- */
+
 /* Część styli przypisanych dla pliku LOGIN.PHP */
 div.login_main_page {
     margin: 0 auto;    
