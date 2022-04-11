@@ -41,6 +41,7 @@ div.right_site {
     float: left;
 }
 div.footer {
+    margin-top: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     color: black;
