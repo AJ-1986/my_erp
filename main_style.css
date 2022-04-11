@@ -1,33 +1,36 @@
 /* Główny arkusz styli dla MY_ERP */
 
 /* Część styli odpowiadających za wygląd INDEX.PHP */
-div.main_page {
-    width: 100%;
-}
-div.main_header {
-    background-color: darkmagenta;
-    float: left;
-    height: 50px;
+div.main_page {    
     width: 100%;    
 }
-div.logo {
-    float: left;
-    width: 200px;
+div.main_header {
+    background-color: darkmagenta;    
+    height: 70px;
+    width: 100%;
+    float: left;    
 }
-h1.main_slogan {
+div.logo {    
+    width: 300px;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 48px;
     font-weight: bold;
     color: white;
+    text-align: center;
+    float: left;      
 }
-a.link_header {
+a.link_header {    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     color: aqua;
 }
 div.right_nav_header {
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right;    
+    width: 300px;
     float: right;
-    text-align: right;
+    color: white;    
 }
 /* ----------------------------------------------- */
 
