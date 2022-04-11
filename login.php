@@ -28,6 +28,18 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
                         {
                     ?>
+                    <p class="login_adn">
+                        Wybierz podmiot, z którym chcesz pracować<br>i kliknij przycisk "Dalej".
+                    </p>
+                    <form method="post" action="function.php">
+                        <input type="hidden" name="pod_f" value="1">
+                        <label class="login_pod_adn" for="podmiot">Podmiot:</label>
+                        <select class="login_pod_list" id="podmiot" name="podmiot">
+                            <?php
+                            ?>
+                        </select>
+                        <input class="login_submit" type="submit" value="Dalej">
+                    </form>
                     <a href="function.php?wyloguj=1">Wyloguj</a>
                     <?php
                         }
