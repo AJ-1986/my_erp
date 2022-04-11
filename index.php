@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl-PL">
     <head>
@@ -34,6 +37,7 @@
                 </div>
             </div>
         </div>
+        <a href="function.php?wyloguj=1">Wyloguj</a>
         <?php
             }
             else
