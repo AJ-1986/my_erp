@@ -44,8 +44,10 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                                 while($query_data = mysqli_fetch_row($sql)) {
                                     echo '
                                         <option value="'. $query_data[0] .'">'. $query_data[1] .'</option>
+                                        <input type="hidden" name="nazwa_podmiot" value="'. $query_data[1] .'">
                                     ';
                                 }
+                                mysqli_close($pol_db);
                             //-----------------------------------
                             ?>
                         </select>
