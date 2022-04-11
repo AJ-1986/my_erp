@@ -37,8 +37,7 @@ mysqli_close($pol_db);
 
 // zapisuje w zmiennych sesyjnych podmiot na którym aktualnie się pracuje
 if($_POST['pod_f'] == '1') {
-    $_SESSION['podmiot_id'] = $_POST['podmiot'];
-    $_SESSION['podmiot_nazwa'] = $_POST['nazwa_podmiot'];
+    $_SESSION['podmiot_id'] = $_POST['podmiot'];    
     echo '
     <script>
     document.location="index.php";
