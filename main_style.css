@@ -32,6 +32,10 @@ div.right_nav_header {
     float: right;
     color: white;    
 }
+div.left_site {
+    width: 20%;
+    float: left;
+}
 /* ----------------------------------------------- */
 
 /* Część styli przypisanych dla pliku LOGIN.PHP */

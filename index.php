@@ -24,13 +24,11 @@ session_start();
                     <a class="link_header" href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
                     <a class="link_header" href="funkcje.php?wyloguj=1">Wyloguj</a>
                 </div>                
-            </div>
-            <div class="main_page">
+            </div>            
                 <div class="left_site">
                 </div>
                 <div class="right_site">
                 </div>
-            </div>
             <div class="main_footer">
                 <div class="footer">
                     
