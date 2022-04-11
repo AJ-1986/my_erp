@@ -55,7 +55,12 @@ label.login_pod_adn {
     font-size: 14px;
     color: black;
 }
-
+select.login_pod_list {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+    padding: 5px 10px;
+}
 input[type=text].log_form {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
