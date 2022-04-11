@@ -34,7 +34,19 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                 <div class="index_left_podmiot">
                     <p class="index_left">
                         Aktualnie pracujesz na podmiocie:
+                        <?php
+                            // pobieranie podmiotów z bazy danych
+                                $q = "SELECT nazwa_podmiotu FROM podmioty WHERE id_podmiotu LIKE '$_SESSION[podmiot_id]'";
+                                $sql = mysqli_query($pol_db, $q);
+
+                                while($query_data = mysqli_fetch_row($sql)) {
+                                    echo '<b>'. $query_data[0] .'</b>';
+                                }
+                                mysqli_close($pol_db);
+                            //-----------------------------------
+                        ?>
                     </p>
+                    
                 </div>
             </div>
             <div class="right_site">
