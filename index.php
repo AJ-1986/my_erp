@@ -66,7 +66,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                         <input class="login_submit" type="submit" value="Zmień">
                         </p>
                     </form>
-                </div>
+                </div><hr>
             </div>
             <div class="right_site">
                 Tymczasowy tekst...
