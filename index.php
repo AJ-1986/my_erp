@@ -19,7 +19,10 @@ session_start();
         ?>
         <div class="main_page">
             <div class="main_header">
-                
+                <div class="logo"><h1 class="main_slogan">MY_ERP</h1></div>
+                <div class="right_nav_header">
+                    
+                </div>
             </div>
             <div class="main_page">
                 <div class="left_site">
