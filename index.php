@@ -19,25 +19,19 @@ session_start();
         ?>
         <div class="main_page">
             <div class="main_header">
-                <div class="logo"><h1 class="main_slogan">MY_ERP</h1></div>
+                <div class="logo">MY_ERP</div>                
                 <div class="right_nav_header">
-                    <a href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
-                    <a href="funkcje.php?wyloguj=1">
-                </div>
+                    <a class="link_header" href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
+                    <a class="link_header" href="funkcje.php?wyloguj=1">Wyloguj</a>
+                </div>                
+            </div>            
+            <div class="left_site">
             </div>
-            <div class="main_page">
-                <div class="left_site">
-                </div>
-                <div class="right_site">
-                </div>
-            </div>
-            <div class="main_footer">
-                <div class="footer">
-                    
-                </div>
-            </div>
-        </div>
-        <a href="function.php?wyloguj=1">Wyloguj</a>
+            <div class="right_site">
+            </div>            
+            <div class="footer">                    
+            </div>            
+        </div>        
         <?php
             }
             else
