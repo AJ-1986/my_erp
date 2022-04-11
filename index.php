@@ -1,0 +1,91 @@
+<?php
+session_start();
+include './db_config.php'; // plik konfiguracyjny bazy
+
+// link do połączenia z bazą danych
+$pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname);
+// --------------------------------
+?>
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta name="autor" content="Adam Jurewicz (proxweb@outlook.com)">
+        <title>MY ERP</title>
+        <link rel="stylesheet" href="main_style.css">
+    </head>
+    <body>
+        <?php
+            if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
+            {
+        ?>
+        <div class="main_page">
+            <div class="main_header">
+                <div class="logo">MY_ERP</div>                
+                <div class="right_nav_header">
+                    <a class="link_header" href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
+                    <a class="link_header" href="function.php?wyloguj=1">Wyloguj</a>
+                </div>                
+            </div>            
+            <div class="left_site">
+                <div class="index_left_podmiot">
+                    <p class="index_left">
+                        Aktualnie pracujesz na podmiocie:
+                        <?php
+                            // pobieranie podmiotów z bazy danych
+                                $q = "SELECT nazwa_podmiotu FROM podmioty WHERE id_podmiotu LIKE '$_SESSION[podmiot_id]'";
+                                $sql = mysqli_query($pol_db, $q);
+
+                                while($query_data = mysqli_fetch_row($sql)) {
+                                    echo '<b>'. $query_data[0] .'</b>';
+                                }                                
+                            //-----------------------------------
+                        ?>
+                    </p>
+                    <form method="post" action="function.php">
+                        <p class="login_adn">
+                        <input type="hidden" name="pod_f" value="1">
+                        <label class="login_pod_adn" for="podmiot">Podmiot:</label>
+                        <select class="login_pod_list" id="podmiot" name="podmiot">
+                            <?php
+                            // pobieranie podmiotów z bazy danych
+                                $q2 = "SELECT *  FROM podmioty";
+                                $sql2 = mysqli_query($pol_db, $q2);
+
+                                while($query_data2 = mysqli_fetch_row($sql2)) {
+                                    echo '
+                                        <option value="'. $query_data2[0] .'">'. $query_data2[1] .'</option>                                        
+                                    ';
+                                }                                
+                            //-----------------------------------
+                            ?>
+                        </select><br><br>
+                        <input class="login_submit" type="submit" value="Zmień">
+                        </p>
+                    </form>
+                </div><hr>
+            </div>
+            <div class="right_site">
+                Tymczasowy tekst...
+            </div>            
+            <div class="footer">
+                &copy; MY_ERP <?php echo gmdate('Y'); ?>                    
+            </div>            
+        </div>        
+        <?php
+            mysqli_close($pol_db);
+            }
+            else
+            {
+        ?>
+                <script>
+                    document.location='login.php';
+                </script>
+        <?php
+            }
+        ?>
+    </body>
+</html>
