@@ -51,8 +51,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                         </select>
                         <input class="login_submit" type="submit" value="Dalej">
                         </p>
-                    </form>                    
-                    <a href="function.php?wyloguj=1">Wyloguj</a>
+                    </form>
                     <?php
                         }
                         else
