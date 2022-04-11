@@ -26,7 +26,11 @@ session_start();
                 </div>                
             </div>            
             <div class="left_site">
-                Tymczasowy tekst...
+                <div class="index_left_podmiot">
+                    <p class="index_left">
+                        Aktualnie pracujesz na podmiocie:
+                    </p>
+                </div>
             </div>
             <div class="right_site">
                 Tymczasowy tekst...
