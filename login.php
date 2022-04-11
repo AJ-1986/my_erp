@@ -36,6 +36,14 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                         <label class="login_pod_adn" for="podmiot">Podmiot:</label>
                         <select class="login_pod_list" id="podmiot" name="podmiot">
                             <?php
+                                $q = "SELECT *  FROM podmioty";
+                                $sql = mysqli_query($pol_db, $q);
+
+                                while($query_data = mysqli_fetch_row($sql)) {
+                                    echo '
+                                        <option value="'. $query_data[0] .'">'. $query_data[1] .'</option>
+                                    ';
+                                }
                             ?>
                         </select>
                         <input class="login_submit" type="submit" value="Dalej">
