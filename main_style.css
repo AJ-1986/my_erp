@@ -50,6 +50,11 @@ td.login_tbl_form_but {
     color: black;
     text-align: center;
 }
+label.login_pod_adn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+}
 
 input[type=text].log_form {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
