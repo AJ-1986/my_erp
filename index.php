@@ -41,12 +41,31 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
 
                                 while($query_data = mysqli_fetch_row($sql)) {
                                     echo '<b>'. $query_data[0] .'</b>';
-                                }
-                                mysqli_close($pol_db);
+                                }                                
                             //-----------------------------------
                         ?>
                     </p>
-                    
+                    <form method="post" action="function.php">
+                        <p class="login_adn">
+                        <input type="hidden" name="pod_f" value="1">
+                        <label class="login_pod_adn" for="podmiot">Podmiot:</label>
+                        <select class="login_pod_list" id="podmiot" name="podmiot">
+                            <?php
+                            // pobieranie podmiotów z bazy danych
+                                $q2 = "SELECT *  FROM podmioty";
+                                $sql2 = mysqli_query($pol_db, $q2);
+
+                                while($query_data2 = mysqli_fetch_row($sql2)) {
+                                    echo '
+                                        <option value="'. $query_data2[0] .'">'. $query_data2[1] .'</option>                                        
+                                    ';
+                                }                                
+                            //-----------------------------------
+                            ?>
+                        </select><br><br>
+                        <input class="login_submit" type="submit" value="Zmień">
+                        </p>
+                    </form>
                 </div>
             </div>
             <div class="right_site">
@@ -57,6 +76,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
             </div>            
         </div>        
         <?php
+            mysqli_close($pol_db);
             }
             else
             {
