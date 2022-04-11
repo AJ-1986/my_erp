@@ -35,6 +35,10 @@ if($_POST['logowanie'] == '1') {
 mysqli_close($pol_db);
 }
 
+if($_POST['pod_f'] == '1') {
+    
+}
+
 // funkcja odpowiedzialna za wylogowanie
 if($_GET['wyloguj'] == '1') {
     session_destroy();
