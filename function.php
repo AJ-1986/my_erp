@@ -37,6 +37,7 @@ mysqli_close($pol_db);
 
 if($_POST['pod_f'] == '1') {
     $_SESSION['podmiot_id'] = $_POST['podmiot'];
+    $_SESSION['podmiot_nazwa'] = $_POST['nazwa_podmiot'];
 }
 
 // funkcja odpowiedzialna za wylogowanie
