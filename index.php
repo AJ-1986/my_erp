@@ -21,7 +21,8 @@ session_start();
             <div class="main_header">
                 <div class="logo"><h1 class="main_slogan">MY_ERP</h1></div>
                 <div class="right_nav_header">
-                    
+                    <a href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
+                    <a href="funkcje.php?wyloguj=1">
                 </div>
             </div>
             <div class="main_page">
