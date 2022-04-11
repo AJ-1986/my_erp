@@ -36,6 +36,10 @@ div.left_site {
     width: 20%;
     float: left;
 }
+div.right_site {
+    width: 75%;
+    float: left;
+}
 /* ----------------------------------------------- */
 
 /* Część styli przypisanych dla pliku LOGIN.PHP */
