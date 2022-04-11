@@ -1,5 +1,12 @@
 /* Główny arkusz styli dla MY_ERP */
 
+/* Część styli odpowiadających za wygląd INDEX.PHP */
+div.main_page {
+    width: 100%;
+}
+
+/* ----------------------------------------------- */
+
 /* Część styli przypisanych dla pliku LOGIN.PHP */
 div.login_main_page {
     margin: 0 auto;    
