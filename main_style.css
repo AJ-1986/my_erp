@@ -20,6 +20,15 @@ h1.main_slogan {
     font-weight: bold;
     color: white;
 }
+a.link_header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: aqua;
+}
+div.right_nav_header {
+    float: right;
+    text-align: right;
+}
 /* ----------------------------------------------- */
 
 /* Część styli przypisanych dla pliku LOGIN.PHP */
