@@ -19,16 +19,12 @@ session_start();
         ?>
         <div class="main_page">
             <div class="main_header">
-                <div class="header_top_nav">
-
-                </div>
-                <div class="header_main_nav">
-
-                </div>
+                
             </div>
             <div class="main_page">
-                <div class="page">
-
+                <div class="left_site">
+                </div>
+                <div class="right_site">
                 </div>
             </div>
             <div class="main_footer">
