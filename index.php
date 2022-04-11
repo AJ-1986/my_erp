@@ -26,10 +26,13 @@ session_start();
                 </div>                
             </div>            
             <div class="left_site">
+                Tymczasowy tekst...
             </div>
             <div class="right_site">
+                Tymczasowy tekst...
             </div>            
-            <div class="footer">                    
+            <div class="footer">
+                &copy; MY_ERP <?php echo gmdate('Y'); ?>                    
             </div>            
         </div>        
         <?php
