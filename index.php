@@ -37,6 +37,7 @@ session_start();
                 </div>
             </div>
         </div>
+        <a href="function.php?wyloguj=1">Wyloguj</a>
         <?php
             }
             else
