@@ -30,8 +30,9 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     ?>
                     <p class="login_adn">
                         Wybierz podmiot, z którym chcesz pracować<br>i kliknij przycisk "Dalej".
-                    </p>
+                    </p>                    
                     <form method="post" action="function.php">
+                        <p class="login_adn">
                         <input type="hidden" name="pod_f" value="1">
                         <label class="login_pod_adn" for="podmiot">Podmiot:</label>
                         <select class="login_pod_list" id="podmiot" name="podmiot">
@@ -49,7 +50,8 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                             ?>
                         </select>
                         <input class="login_submit" type="submit" value="Dalej">
-                    </form>
+                        </p>
+                    </form>                    
                     <a href="function.php?wyloguj=1">Wyloguj</a>
                     <?php
                         }
