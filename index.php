@@ -22,7 +22,7 @@ session_start();
                 <div class="logo">MY_ERP</div>                
                 <div class="right_nav_header">
                     <a class="link_header" href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
-                    <a class="link_header" href="funkcje.php?wyloguj=1">Wyloguj</a>
+                    <a class="link_header" href="function.php?wyloguj=1">Wyloguj</a>
                 </div>                
             </div>            
             <div class="left_site">
