@@ -68,11 +68,11 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     </form>
                 </div><hr>
                 <div class="left_main_navigation">
-                    <a href="index.php"><img src="images/faktury_sprzedazy_button.jpg" alt="Faktury sprzedaży"></a><br><br>
-                    <a href="index.php"><img src="images/faktury_zakupu_button.jpg" alt="Faktury zakupu"></a><br><br>
-                    <a href="index.php"><img src="images/kontrahenci_button.jpg" alt="Kontrahenci"></a><br><br>
-                    <a href="index.php"><img src="images/magazyn_button.jpg" alt="Magazyn"></a><br><br>
-                    <a href="index.php"><img src="images/raporty_button.jpg" alt="Raporty"></a><br><br>
+                    <a href="index.php"><img class="img_buttons" src="images/faktury_sprzedazy_button.jpg" alt="Faktury sprzedaży"></a><br><br>
+                    <a href="index.php"><img class="img_buttons" src="images/faktury_zakupu_button.jpg" alt="Faktury zakupu"></a><br><br>
+                    <a href="index.php"><img class="img_buttons" src="images/kontrahenci_button.jpg" alt="Kontrahenci"></a><br><br>
+                    <a href="index.php"><img class="img_buttons" src="images/magazyn_button.jpg" alt="Magazyn"></a><br><br>
+                    <a href="index.php"><img class="img_buttons" src="images/raporty_button.jpg" alt="Raporty"></a><br><br>
                 </div>
             </div>
             <div class="right_site">
