@@ -36,6 +36,10 @@ div.left_site {
     width: 20%;
     float: left;
 }
+div.left_main_navigation {
+    margin: 10px auto;    
+    width: 125px;
+}
 div.right_site {
     width: 75%;
     float: left;
