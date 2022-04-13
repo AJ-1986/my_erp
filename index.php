@@ -79,7 +79,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                 Tymczasowy tekst...
             </div>            
             <div class="footer">
-                &copy; MY_ERP <?php echo gmdate('Y'); ?>                    
+                <p class="footer">&copy; MY_ERP <?php echo gmdate('Y'); ?></p>                    
             </div>            
         </div>        
         <?php
