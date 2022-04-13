@@ -22,7 +22,13 @@ if($_POST['logowanie'] == '1') {
             ';
         }
         else {
-            $id_ses = md5($_POST['login_uz'], $_POST['haslo_uz']);
+            for ($licz=1; $licz<=10; $licz++)
+            {
+                $losowa_liczba = rand(1, 99);
+                $liczba_wygenerowana .= $losowa_liczba;                
+            }
+            
+            $id_ses = md5($_POST['login_uz'] .= $liczba_wygenerowana .= $_POST['haslo_uz']);
             $_SESSION['log_ok'] = $id_ses;
             $_SESSION['log_id'] = $id_ses;
             echo '
