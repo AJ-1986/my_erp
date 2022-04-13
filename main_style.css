@@ -33,21 +33,34 @@ div.right_nav_header {
     color: white;    
 }
 div.left_site {
+    background-color: silver;
+    border-right: 3px solid gray;
     width: 20%;
-    float: left;
+    float: left;    
+}
+div.left_main_navigation {
+    margin: 10px auto;    
+    width: 125px;
+}
+img.img_buttons {
+    border: 3px solid darkslategray;
 }
 div.right_site {
     width: 75%;
     float: left;
 }
 div.footer {
-    margin-top: 25px;
+    background-color: darkmagenta;    
+    width: 100%;
+    height: 70px;        
+    float: left;
+}
+p.footer {
+    margin: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
-    color: black;
-    width: 100%;
+    color: rgb(255, 255, 255);
     text-align: center;
-    float: left;
 }
 div.index_left_podmiot {
     width: 100%;
