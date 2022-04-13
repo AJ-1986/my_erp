@@ -69,6 +69,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                 </div><hr>
                 <div class="left_main_navigation">
                     <a href="index.php"><img src="images/faktury_sprzedazy_button.jpg" alt="Faktury sprzedaży"></a><br><br>
+                    <a href="index.php"><img src="images/faktury_zakupu_button.jpg" alt="Faktury zakupu"></a><br><br>
                 </div>
             </div>
             <div class="right_site">
