@@ -33,6 +33,7 @@ div.right_nav_header {
     color: white;    
 }
 div.left_site {
+    background-color: silver;
     width: 20%;
     float: left;
 }
