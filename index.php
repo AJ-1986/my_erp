@@ -67,6 +67,9 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                         </p>
                     </form>
                 </div><hr>
+                <div class="left_main_navigation">
+                    
+                </div>
             </div>
             <div class="right_site">
                 Tymczasowy tekst...
