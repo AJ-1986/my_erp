@@ -13,6 +13,18 @@ p.bazowy {
     font-size: 14px;
     color: black;
 }
+p.demo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 16px;    
+    margin-left: 50px;
+    height: 60px;
+    background-color: rgb(0, 231, 135);
+    color: rgb(2, 88, 2);
+    border: 3px solid green;
+    text-align: center;
+    vertical-align: middle;
+}
 /* --------------------- */
 
 /* Część styli odpowiadających za wygląd INDEX.PHP */

@@ -78,6 +78,10 @@ global $pol_db;
                 </div>
             </div>
             <div class="right_site">
+                <p class="demo">
+                    Wersja DEMO. Narzędzie w trakcie rozwoju. Codziennie nowe funkcje!<br>
+                    Więcej na <a href="https://github.com/AJ-1986/my_erp/tree/my_erp_1.0">https://github.com/AJ-1986/my_erp/tree/my_erp_1.0</a>
+                </p>
                 <?php
                     if($_GET['auth'] == '1') {
                         // strona główna
