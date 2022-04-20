@@ -47,7 +47,7 @@ if($_POST['pod_f'] == '1') {
     $_SESSION['podmiot_id'] = $_POST['podmiot'];    
     echo '
     <script>
-    document.location="index.php";
+    document.location="index.php?auth=1&strona_glowna=1";
     </script>';
 }
 
