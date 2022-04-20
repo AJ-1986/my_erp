@@ -27,6 +27,7 @@ global $pol_db;
             <div class="main_header">
                 <div class="logo">MY_ERP</div>                
                 <div class="right_nav_header">
+                    <a class="link_header" href="index.php?auth=1&strona_glowna=1">Strona główna</a>&nbsp;&nbsp;|&nbsp;
                     <a class="link_header" href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
                     <a class="link_header" href="function.php?wyloguj=1">Wyloguj</a>
                 </div>                
@@ -77,7 +78,15 @@ global $pol_db;
                 </div>
             </div>
             <div class="right_site">
-                Tymczasowy tekst...
+                <?php
+                    if($_GET['auth'] == '1') {
+                        // strona główna
+                        if($_GET['strona_glowna'] == '1') {
+                            include './strona_glowna.php'; // podłączenie pliku strony głównej
+                        }
+                        // ------------
+                    }
+                ?>
             </div>            
             <div class="footer">
                 <p class="footer">&copy; MY_ERP <?php echo gmdate('Y'); ?></p>                    
