@@ -1,5 +1,15 @@
 /* Główny arkusz styli dla MY_ERP */
 
+/* Style bazowe - główne */
+h1.bazowy {
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    color: black;
+}
+
+/* --------------------- */
+
 /* Część styli odpowiadających za wygląd INDEX.PHP */
 div.main_page {    
     width: 100%;    
