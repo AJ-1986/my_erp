@@ -4,6 +4,7 @@ include './db_config.php'; // plik konfiguracyjny bazy
 
 // link do połączenia z bazą danych
 $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname);
+global $pol_db;
 // --------------------------------
 ?>
 <!DOCTYPE html>
@@ -60,6 +61,13 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     ?>
                     <p class="login_adn">
                         Aby się zalogować wpisz login i hasło użytkownika.
+                        <?php
+                            if($_GET['blad'] == '1') {
+                                echo '
+                                <br><font color="red"><b>Nieprawidłowy login lub hasło</b></font>
+                                ';
+                            }
+                        ?>
                     </p>
                     <div class="login_form">
                         <form method="post" action="function.php">

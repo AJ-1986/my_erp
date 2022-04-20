@@ -1,13 +1,14 @@
 <?php
 session_start();
 include './db_config.php'; // plik konfiguracyjny bazy
+// link do połączenia z bazą danych
+$pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname);
+global $pol_db;
+// --------------------------------
 
 // funkcja odpowiadająca za poprawne logowanie
 if($_POST['logowanie'] == '1') {
     
-    // link do połączenia z bazą danych
-    $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname);
-    // --------------------------------
     if(!$pol_db) die('Błąd z połączeniem - sprawdź dane do bazy danych');
     else {
         $haslo_md5 = md5($_POST['haslo_uz']);        
@@ -46,7 +47,7 @@ if($_POST['pod_f'] == '1') {
     $_SESSION['podmiot_id'] = $_POST['podmiot'];    
     echo '
     <script>
-    document.location="index.php";
+    document.location="index.php?auth=1&strona_glowna=1";
     </script>';
 }
 
