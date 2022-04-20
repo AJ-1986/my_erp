@@ -60,6 +60,13 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                     ?>
                     <p class="login_adn">
                         Aby się zalogować wpisz login i hasło użytkownika.
+                        <?php
+                            if($_GET['blad'] == '1') {
+                                echo '
+                                
+                                ';
+                            }
+                        ?>
                     </p>
                     <div class="login_form">
                         <form method="post" action="function.php">
