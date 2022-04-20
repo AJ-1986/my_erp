@@ -63,7 +63,7 @@ $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname)
                         <?php
                             if($_GET['blad'] == '1') {
                                 echo '
-                                
+                                <br><font color="red"><b>Nieprawidłowy login lub hasło</b></font>
                                 ';
                             }
                         ?>
