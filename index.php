@@ -78,7 +78,15 @@ global $pol_db;
                 </div>
             </div>
             <div class="right_site">
-                Tymczasowy tekst...
+                <?php
+                    if($_GET['auth'] == '1') {
+                        // strona główna
+                        if($_GET['strona_glowna'] == '1') {
+                            include './strona_glowna.php'; // podłączenie pliku strony głównej
+                        }
+                        // ------------
+                    }
+                ?>
             </div>            
             <div class="footer">
                 <p class="footer">&copy; MY_ERP <?php echo gmdate('Y'); ?></p>                    
