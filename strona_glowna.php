@@ -15,6 +15,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 }
 else {
     echo '
+<!DOCTYPE html>
 <html lang="pl-PL">
 <body>
     <script>

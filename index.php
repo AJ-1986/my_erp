@@ -87,7 +87,7 @@ global $pol_db;
                     if($_GET['auth'] == '1') {
                         // strona główna
                         if($_GET['strona_glowna'] == '1') {
-                            include './strona_glowna.php'; // podłączenie pliku strony głównej
+                            include './strona_glowna.php'; // podłączenie pliku strona_glowna.php
                         }
                         // ------------
 
