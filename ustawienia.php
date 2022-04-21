@@ -5,7 +5,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         echo '
                     <h1 class="bazowy">Ustawienia</h1>
                     <p class="bazowy">
-                        Opis tymczasowy
+                        Na tej stronie dokonasz wszelkich modyfikacji związanych z twoimi informacjami dotyczącymi użytkowników, podmiotów.
                     </p>
         ';
     }
