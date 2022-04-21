@@ -14,14 +14,14 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
-                    <form method="post" action="function.php">
+                    <form method="post" action="">
                         <input type="hidden" name="id_podmiotu" value="'. $query_data[0] .'">
                         <fieldset class="us_bazowy">
                             <legend class="us_bazowy">Dane podmiotu</legend>
                             <table>
                                 <tr>
                                     <td class="us_bazowy">Nazwa podmiotu:</td>
-                                    <td><input class="us_nazwa_pod" name="nazwa_podmiotu" value="'. $query_data[1] .'"></td>
+                                    <td><input class="us_pod_tekst" name="nazwa_podmiotu" value="'. $query_data[1] .'"></td>
                                     <td class="us_form_adn">Skrócona nazwa widoczna<br>tylko w panelu.</td>
                                 </tr>
                                 <tr>
@@ -31,45 +31,46 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Adres:</td>
-                                    <td><input class="us_adres_pod" name="adres_podmiotu" value="'. $query_data[3] .'"></td>
+                                    <td><input class="us_pod_tekst" name="adres_podmiotu" value="'. $query_data[3] .'"></td>
                                     <td class="us_form_adn">Nazwa ulicy, na której jest<br>prowadzona działalność.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Numer domu/lokalu:</td>
-                                    <td><input class="us_adres_pod" name="numer_lok_podmiotu" value="'. $query_data[4] .'"></td>
+                                    <td><input class="us_pod_tekst" name="numer_lok_podmiotu" value="'. $query_data[4] .'"></td>
                                     <td class="us_form_adn">Dopuszczalne różne formy numeracji.<br>Np: "24/5 lok 3".</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Kod pocztowy:</td>
-                                    <td><input class="us_adres_pod" name="kod_pocztowy_podmiotu" value="'. $query_data[5] .'"></td>
+                                    <td><input class="us_pod_tekst" name="kod_pocztowy_podmiotu" value="'. $query_data[5] .'"></td>
                                     <td class="us_form_adn">Kod pocztowy miasta.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Miasto:</td>
-                                    <td><input class="us_adres_pod" name="miasto_podmiotu" value="'. $query_data[6] .'"></td>
+                                    <td><input class="us_pod_tekst" name="miasto_podmiotu" value="'. $query_data[6] .'"></td>
                                     <td class="us_form_adn">Nazwa miasta, w którym prowadzona<br>jest działalność.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">NIP:</td>
-                                    <td><input class="us_adres_pod" name="nip_podmiotu" value="'. $query_data[7] .'"></td>
+                                    <td><input class="us_pod_tekst" name="nip_podmiotu" value="'. $query_data[7] .'"></td>
                                     <td class="us_form_adn">Numer NIP (w jednym ciągu znaków<br>bez myślników i spacji).</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">REGON:</td>
-                                    <td><input class="us_adres_pod" name="regon_podmiotu" value="'. $query_data[8] .'"></td>
+                                    <td><input class="us_pod_tekst" name="regon_podmiotu" value="'. $query_data[8] .'"></td>
                                     <td class="us_form_adn">Numer REGON (w jednym ciągu znaków<br>bez myślników i spacji).</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Telefon:</td>
-                                    <td><input class="us_adres_pod" name="telefon_podmiotu" value="'. $query_data[9] .'"></td>
+                                    <td><input class="us_pod_tekst" name="telefon_podmiotu" value="'. $query_data[9] .'"></td>
                                     <td class="us_form_adn">Numer telefonu do kontaktu.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Adres e-mail:</td>
-                                    <td><input class="us_adres_pod" name="email_podmiotu" value="'. $query_data[10] .'"></td>
+                                    <td><input class="us_pod_tekst" name="email_podmiotu" value="'. $query_data[10] .'"></td>
                                     <td class="us_form_adn">Adres e-mail do kontaktu.</td>
-                                </tr>
+                                </tr>                                
                             </table>
+                            <p class="bazowy"><input class="us_bazowy_sub" type="submit" value="Zapisz zmiany"></p>
                         </fieldset>
                     </form>
             ';
