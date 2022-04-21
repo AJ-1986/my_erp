@@ -25,6 +25,60 @@ p.demo {
 }
 /* --------------------- */
 
+/* Część styli dla strony USTAWIENIA.PHP */
+fieldset.us_bazowy {
+    margin-left: 50px;
+    background-color: silver;
+}
+legend.us_bazowy {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
+td.us_bazowy {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;    
+    text-align: right;
+    color: black;
+}
+td.us_form_adn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-style: italic;    
+    color: black;
+}
+input[type=text].us_pod_tekst {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: rgb(83, 83, 83);
+}
+textarea.us_pel_nazwa_pod {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: rgb(83, 83, 83);    
+}
+input[type=submit].us_bazowy_sub {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=submit].us_bazowy_sub:hover {
+    background-color: gold;
+}
+/* ------------------------------------- */
+
 /* Część styli odpowiadających za wygląd INDEX.PHP */
 div.main_page {    
     width: 100%;    
