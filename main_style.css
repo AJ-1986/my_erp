@@ -26,7 +26,10 @@ p.demo {
 /* --------------------- */
 
 /* Część styli dla strony USTAWIENIA.PHP */
-
+fieldset.us_bazowy {
+    margin-left: 50px;
+    background-color: silver;
+}
 /* ------------------------------------- */
 
 /* Część styli odpowiadających za wygląd INDEX.PHP */
