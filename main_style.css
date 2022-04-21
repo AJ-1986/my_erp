@@ -53,6 +53,32 @@ td.us_form_adn {
     margin-left: 10px;
     color: black;
 }
+input[type=text].us_pod_tekst {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: rgb(83, 83, 83);
+}
+textarea.us_pel_nazwa_pod {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    padding: 5px 10px;
+    color: rgb(83, 83, 83);    
+}
+input[type=submit].us_bazowy_sub {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=submit].us_bazowy_sub:hover {
+    background-color: gold;
+}
 /* ------------------------------------- */
 
 /* Część styli odpowiadających za wygląd INDEX.PHP */
