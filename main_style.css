@@ -39,6 +39,20 @@ legend.us_bazowy {
     padding: 10px 10px;
     border: 1px solid black;
 }
+td.us_bazowy {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    margin-right: 10px;
+    text-align: right;
+    color: black;
+}
+td.us_form_adn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 10px;
+    color: black;
+}
 /* ------------------------------------- */
 
 /* Część styli odpowiadających za wygląd INDEX.PHP */
