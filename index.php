@@ -90,6 +90,12 @@ global $pol_db;
                             include './strona_glowna.php'; // podłączenie pliku strony głównej
                         }
                         // ------------
+
+                        // ustawienia
+                        if($_GET['ustawienia'] == '1') {
+                            include './ustawienia.php'; // podłączenie pliku ustawienia.php
+                        }
+                        // ------------
                     }
                 ?>
             </div>            
