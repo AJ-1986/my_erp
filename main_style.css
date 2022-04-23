@@ -13,7 +13,117 @@ p.bazowy {
     font-size: 14px;
     color: black;
 }
+p.demo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 16px;    
+    margin-left: 50px;    
+    background-color: rgb(0, 231, 135);
+    color: rgb(2, 88, 2);
+    border: 3px solid green;
+    text-align: center;    
+}
 /* --------------------- */
+
+/* Część styli dla strony HISTORIA_ZD.PHP */
+fieldset.historia_zd {
+    margin-left: 50px;
+    background-color: silver;
+}
+legend.historia_zd {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
+table.historia_zd {
+    border: 1px solid black;
+    background-color: white;
+}
+td.historia_zd1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: darkmagenta;
+    color: white;
+    padding: 15px 15px;    
+}
+td.historia_zd2 {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;    
+    color: rgb(0, 0, 0);
+    padding: 5px 5px;    
+}
+td.historia_zd2:hover {
+    background-color: darkmagenta;
+    color: white;
+}
+tr.historia_zd2:nth-child(odd) {
+    background: rgb(201, 201, 201);
+}
+  
+tr.historia_zd2:nth-child(even) {
+    background: rgb(182, 182, 182);
+}
+/* -------------------------------------- */ 
+
+/* Część styli dla strony USTAWIENIA.PHP */
+fieldset.us_bazowy {
+    margin-left: 50px;
+    background-color: silver;
+}
+legend.us_bazowy {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
+td.us_bazowy {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;    
+    text-align: right;
+    color: black;
+}
+td.us_form_adn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-style: italic;    
+    color: black;
+}
+input[type=text].us_pod_tekst {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: rgb(83, 83, 83);
+}
+textarea.us_pel_nazwa_pod {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: rgb(83, 83, 83);    
+}
+input[type=submit].us_bazowy_sub {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=submit].us_bazowy_sub:hover {
+    background-color: gold;
+}
+/* ------------------------------------- */
 
 /* Część styli odpowiadających za wygląd INDEX.PHP */
 div.main_page {    
