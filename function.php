@@ -12,7 +12,7 @@ if($_POST['logowanie'] == '1') {
     if(!$pol_db) die('Błąd z połączeniem - sprawdź dane do bazy danych');
     else {
         $haslo_md5 = md5($_POST['haslo_uz']);        
-        $q = "SELECT login, haslo  FROM uzytkownicy WHERE login LIKE '$_POST[login_uz]' AND haslo LIKE '$haslo_md5'";
+        $q = "SELECT id_uz  FROM uzytkownicy WHERE login LIKE '$_POST[login_uz]' AND haslo LIKE '$haslo_md5'";
         $sql = mysqli_query($pol_db, $q);
 
         if(!$query_data = mysqli_fetch_row($sql)) {
@@ -23,6 +23,11 @@ if($_POST['logowanie'] == '1') {
             ';
         }
         else {
+
+            // zapis informacji o logowaniu w logu systemu zdarzeń
+                
+            // ---------------------------------------------------
+
             for ($licz=1; $licz<=10; $licz++)
             {
                 $losowa_liczba = rand(1, 99);
