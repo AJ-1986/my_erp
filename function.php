@@ -41,6 +41,37 @@ if($_POST['logowanie'] == '1') {
 
 mysqli_close($pol_db);
 }
+// -------------------------------------------
+
+// funkcja aktualizuje dane podmiotu
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['aktualizacja_danych_podmiotu'] == '1') {
+        $q = "UPDATE podmioty SET nazwa_podmiotu = '$_POST[nazwa_podmiotu]',
+                pelna_nazwa_podmiotu = '$_POST[pelna_nazwa_podmiotu]',
+                adres = '$_POST[adres_podmiotu]',
+                numer = '$_POST[numer_lok_podmiotu]',
+                kod_pocztowy = '$_POST[kod_pocztowy_podmiotu]',
+                miasto = '$_POST[miasto_podmiotu]',
+                nip = '$_POST[nip_podmiotu]',
+                regon = '$_POST[regon_podmiotu]',
+                telefon = '$_POST[telefon_podmiotu]',
+                email = '$_POST[email_podmiotu]'
+                WHERE podmioty . id_podmiotu = '$_POST[id_podmiotu]'";
+        
+        $sql = mysqli_query($pol_db, $q);
+
+        if(!$sql) die('Coś poszło nie tak - sprawdź połączenie z bazą danych'); 
+        else {
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=1";
+                </script>
+            ';
+        }
+        mysqli_close($pol_db);
+    }
+}
+// ---------------------------------
 
 // zapisuje w zmiennych sesyjnych podmiot na którym aktualnie się pracuje
 if($_POST['pod_f'] == '1') {
