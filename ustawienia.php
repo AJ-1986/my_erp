@@ -14,7 +14,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
-                    <form method="post" action="">
+                    <form method="post" action="function.php">
+                        <input type="hidden" name="aktualizacja_danych_podmiotu" value="1">
                         <input type="hidden" name="id_podmiotu" value="'. $query_data[0] .'">
                         <fieldset class="us_bazowy">
                             <legend class="us_bazowy">Dane podmiotu</legend>

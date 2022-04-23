@@ -41,6 +41,15 @@ if($_POST['logowanie'] == '1') {
 
 mysqli_close($pol_db);
 }
+// -------------------------------------------
+
+// funkcja aktualizuje dane podmiotu
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['aktualizacja_danych_podmiotu'] == '1') {
+        
+    }
+}
+// ---------------------------------
 
 // zapisuje w zmiennych sesyjnych podmiot na którym aktualnie się pracuje
 if($_POST['pod_f'] == '1') {
