@@ -28,7 +28,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         <tr>
                         <td class="historia_zd1">Użytkownik</td>
                         <td class="historia_zd1">Data</td>
-                        <td class="historia_zd1">Godzina</td>
+                        <td class="historia_zd1">*Godzina</td>
                         <td class="historia_zd1">Opis zdarzenia</td>
                         </tr>   
             ';
@@ -45,6 +45,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         }
         echo '
                         </table>
+                        <p class="bazowy">(*) Zdarzenia zapisywane są według czasu systemowego serwera.<br>
+                        Mogą zaistnieć różnice w czasie między Twoim, a serwerem.</p>
                     </fieldset>
         ';        
         // ------------------------------------------
