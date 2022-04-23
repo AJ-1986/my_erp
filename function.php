@@ -25,7 +25,9 @@ if($_POST['logowanie'] == '1') {
         else {
 
             // zapis informacji o logowaniu w logu systemu zdarzeń
-                
+            $akt_data = gmdate('Y-m-d');
+            $akt_godz = gmdate('H:i:s');
+            $kom_zd = 'Udane logowanie użytkownika.';
             // ---------------------------------------------------
 
             for ($licz=1; $licz<=10; $licz++)
