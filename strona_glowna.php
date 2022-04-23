@@ -11,6 +11,9 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         Dziękuję za użytkowanie.
                     </p>
         ';
+        // wyświetlanie systemowego dziennika zdarzeń
+        
+        // ------------------------------------------
     }
 }
 else {
