@@ -35,7 +35,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
-                            <tr>
+                            <tr class="historia_zd2">
                                 <td class="historia_zd2">'. $query_data[1] .'</td>
                                 <td class="historia_zd2">'. $query_data[2] .'</td>
                                 <td class="historia_zd2">'. $query_data[3] .'</td>

@@ -39,6 +39,36 @@ legend.historia_zd {
     padding: 10px 10px;
     border: 1px solid black;
 }
+table.historia_zd {
+    border: 1px solid black;
+    background-color: white;
+}
+td.historia_zd1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: darkmagenta;
+    color: white;
+    padding: 15px 15px;    
+}
+td.historia_zd2 {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;    
+    color: rgb(0, 0, 0);
+    padding: 5px 5px;    
+}
+td.historia_zd2:hover {
+    background-color: darkmagenta;
+    color: white;
+}
+tr.historia_zd2:nth-child(odd) {
+    background: rgb(201, 201, 201);
+}
+  
+tr.historia_zd2:nth-child(even) {
+    background: rgb(182, 182, 182);
+}
 /* -------------------------------------- */ 
 
 /* Część styli dla strony USTAWIENIA.PHP */
