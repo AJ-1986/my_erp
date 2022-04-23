@@ -78,6 +78,16 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
         if(!$sql) die('Coś poszło nie tak - sprawdź połączenie z bazą danych'); 
         else {
+            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            $akt_data = gmdate('Y-m-d');
+            $akt_godz = gmdate('H:i:s');
+            $kom_zd = 'Zaktualizowano dane podmiotu: '. $_POST['nazwa_podmiotu'] .'.';
+            $q = "INSERT INTO system_log (log_id, user_id, data, godzina, zdarzenie)
+                    VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
+            $sql = mysqli_query($pol_db, $q);
+
+            if(!$sql) die('Coś poszło nie tak z rejestracją logowania... sprawdź bazę danych');            
+            // ---------------------------------------------------
             echo '
                 <script>
                     document.location="index.php?auth=1&ustawienia=1&status=1";
