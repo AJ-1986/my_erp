@@ -26,7 +26,19 @@ p.demo {
 /* --------------------- */
 
 /* Część styli dla strony HISTORIA_ZD.PHP */
-
+fieldset.historia_zd {
+    margin-left: 50px;
+    background-color: silver;
+}
+legend.historia_zd {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
 /* -------------------------------------- */ 
 
 /* Część styli dla strony USTAWIENIA.PHP */
