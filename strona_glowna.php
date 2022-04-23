@@ -15,12 +15,38 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         $q = "SELECT system_log.log_id, uzytkownicy.login, system_log.data, system_log.godzina, system_log.zdarzenie 
                 FROM system_log 
                 INNER JOIN uzytkownicy ON system_log.user_id=uzytkownicy.id_uz 
-                ORDER BY system_log.log_id DESC LIMIT 15";
+                ORDER BY system_log.log_id 
+                DESC LIMIT 15";
         $sql = mysqli_query($pol_db, $q);
 
+            echo '
+                    <fieldset class="historia_zd">
+                        <legend class="historia_zd">Historia zdarzeń</legend>
+                        <p class="bazowy">Lista wyświetla aktualne 15 zdarzeń w systemie.
+                        <a href="index.php?auth=1&historia_zd=1">Zobacz wszystkie zdarzenia.</a></p>
+                        <table class="historia_zd">
+                        <tr>
+                        <td class="historia_zd1">Użytkownik</td>
+                        <td class="historia_zd1">Data</td>
+                        <td class="historia_zd1">Godzina</td>
+                        <td class="historia_zd1">Opis zdarzenia</td>
+                        </tr>   
+            ';
+
         while($query_data = mysqli_fetch_row($sql)) {
-      
+            echo '
+                            <tr>
+                                <td class="historia_zd2">'. $query_data[1] .'</td>
+                                <td class="historia_zd2">'. $query_data[2] .'</td>
+                                <td class="historia_zd2">'. $query_data[3] .'</td>
+                                <td class="historia_zd2">'. $query_data[4] .'</td>
+                            </tr>   
+            ';
         }
+        echo '
+                        </table>
+                    </fieldset>
+        ';        
         // ------------------------------------------
     }
 }
