@@ -28,6 +28,11 @@ if($_POST['logowanie'] == '1') {
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Udane logowanie użytkownika.';
+            $q = "INSERT INTO system_log (log_id, user_id, data, godzina, zdarzenie)
+                    VALUES (NULL, '$query_data[0]', '$akt_data', '$akt_godz', '$kom_zd')";
+            $sql = mysqli_query($pol_db, $q);
+
+            if(!$sql) die('Coś poszło nie tak... sprawdź bazę danych');
             // ---------------------------------------------------
 
             for ($licz=1; $licz<=10; $licz++)
