@@ -64,7 +64,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         else {
             echo '
                 <script>
-                    document.location="index.php?auth=1&ustawienia=1";
+                    document.location="index.php?auth=1&ustawienia=1&status=1";
                 </script>
             ';
         }

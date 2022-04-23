@@ -71,7 +71,15 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                     <td class="us_form_adn">Adres e-mail do kontaktu.</td>
                                 </tr>                                
                             </table>
-                            <p class="bazowy"><input class="us_bazowy_sub" type="submit" value="Zapisz zmiany"></p>
+                            <p class="bazowy">
+                            <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';
+            if($_GET['status'] == '1') {
+                echo '
+                            &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                ';
+            }
+            echo '
+                            </p>
                         </fieldset>
                     </form>
             ';
