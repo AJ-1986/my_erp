@@ -24,6 +24,10 @@ if($_POST['logowanie'] == '1') {
         }
         else {
 
+            // tworzenie zmiennej sesyjnej z id zalogowanego użytkownika
+            $_SESSION['user_SQL_id'] = $query_data[0];
+            // --------------------------------------------------------- 
+
             // zapis informacji o logowaniu w logu systemu zdarzeń
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
