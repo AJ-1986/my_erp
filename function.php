@@ -86,7 +86,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak z rejestracją logowania... sprawdź bazę danych');            
+            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
             // ---------------------------------------------------
             echo '
                 <script>
