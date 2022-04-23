@@ -36,7 +36,7 @@ if($_POST['logowanie'] == '1') {
                     VALUES (NULL, '$query_data[0]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak... sprawdź bazę danych');
+            if(!$sql) die('Coś poszło nie tak z rejestracją logowania... sprawdź bazę danych');            
             // ---------------------------------------------------
 
             for ($licz=1; $licz<=10; $licz++)
