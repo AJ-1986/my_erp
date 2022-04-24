@@ -12,8 +12,13 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         echo '
                     <fieldset class="us_bazowy">
                         <legend class="us_bazowy">Zarządzanie użytkownikami</legend>
-                        <p>Tymczasowy tekst...</p>
+                        <p class="bazowy">Aby utworzyć nowego użytkownika lub edytować dane istniejącego wystarczy kliknąć w odpowiedni przycisk poniżej.</p>
+                        <p class="bazowy">
+                            <button onClick="">Utwórz nowego użytkownika</button>&nbsp;&nbsp;|&nbsp;
+                            <button onClick="">Edytuj swoje dane</button>
+                        </p>
         ';
+        
         echo '
                     </fieldset>
                     <p>&nbsp;</p>
