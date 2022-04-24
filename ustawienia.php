@@ -18,6 +18,9 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             <button id="form_nav_uz_a2" onClick="form_ed_danych_uz(\'inline\', \'none\')">Edytuj swoje dane</button><button id="form_nav_uz_b2" onClick="form_ed_danych_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
                             <button id="form_nav_uz_a3" onClick="form_ed_hasla_uz(\'inline\', \'none\')">Zmień swoje hasło</button><button id="form_nav_uz_b3" onClick="form_ed_hasla_uz(\'none\', \'inline\')">Ukryj</button>
                         </p>
+                        <span id="tworzenie_uz">
+                            <p class="bazowy">Funkcja dostępna już wkrótce...</p>
+                        </span>
         ';
         $q = "SELECT * FROM uzytkownicy WHERE id_uz LIKE '$_SESSION[user_SQL_id]'";
         $sql = mysqli_query($pol_db, $q);
