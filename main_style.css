@@ -1,5 +1,35 @@
 /* Główny arkusz styli dla MY_ERP */
 
+/* Sekcja do skryptów JS */
+#ed_danych_uz {
+    display: none;
+}
+#ed_hasla_uz {
+    display: none;
+}
+#tworzenie_uz {
+    display: none;
+}
+#form_nav_uz_a1 {
+    display: inline;
+}
+#form_nav_uz_a2 {
+    display: inline;
+}
+#form_nav_uz_a3 {
+    display: inline;
+}
+#form_nav_uz_b1 {
+    display: none;
+}
+#form_nav_uz_b2 {
+    display: none;
+}
+#form_nav_uz_b3 {
+    display: none;
+}
+/* --------------------- */
+
 /* Style bazowe - główne */
 h1.bazowy {
     margin-left: 20px;
@@ -87,8 +117,16 @@ legend.us_bazowy {
 }
 td.us_bazowy {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;    
+    font-size: 14px;
+    font-weight: bold;    
     text-align: right;
+    color: black;
+}
+td.us_bazowy2 {
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;     
+    font-style: italic;
     color: black;
 }
 td.us_form_adn {
@@ -98,6 +136,13 @@ td.us_form_adn {
     color: black;
 }
 input[type=text].us_pod_tekst {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 180px;
+    color: rgb(83, 83, 83);
+}
+input[type=password].us_pod_haslo {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     padding: 5px 10px;
@@ -135,13 +180,12 @@ div.main_header {
     width: 100%;
     float: left;    
 }
-div.logo {    
-    width: 300px;    
+span.logo {    
+    margin-left: 10px;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 48px;
     font-weight: bold;
-    color: white;
-    text-align: center;
+    color: white;    
     float: left;      
 }
 a.link_header {    
@@ -149,7 +193,7 @@ a.link_header {
     font-size: 14px;
     color: aqua;
 }
-div.right_nav_header {
+span.right_nav_header {
     margin-top: 24px;
     margin-right: 20px;
     text-align: right;    
@@ -158,12 +202,14 @@ div.right_nav_header {
     color: white;    
 }
 div.left_site {
+    margin-top: 10px;
     background-color: silver;
-    border-right: 3px solid gray;
+    border: 3px solid gray;    
     width: 20%;
     float: left;    
 }
-div.left_main_navigation {
+span.left_main_navigation {
+    display: block;
     margin: 10px auto;    
     width: 125px;
 }
@@ -174,7 +220,13 @@ div.right_site {
     width: 75%;
     float: left;
 }
+div.spacer {
+    width: 100%;
+    height: 50px;
+    float: left;
+}
 div.footer {
+    margin-bottom: 10px;
     background-color: darkmagenta;    
     width: 100%;
     height: 70px;        
@@ -187,7 +239,7 @@ p.footer {
     color: rgb(255, 255, 255);
     text-align: center;
 }
-div.index_left_podmiot {
+span.index_left_podmiot {
     width: 100%;
 }
 p.index_left {
