@@ -20,16 +20,22 @@ global $pol_db;
         <script>
             function form_ed_danych_uz(status1, status2) {
                 document.getElementById('ed_danych_uz').style.display = status1;
+                document.getElementById('form_nav_uz_a2').style.display = status2;
+                document.getElementById('form_nav_uz_b2').style.display = status1;
             }
             function form_ed_hasla_uz(status1, status2) {
                 document.getElementById('ed_hasla_uz').style.display = status1;
+                document.getElementById('form_nav_uz_a3').style.display = status2;
+                document.getElementById('form_nav_uz_b3').style.display = status1;
             } 
             function form_tw_nowego_uz(status1, status2) {
                 document.getElementById('tworzenie_uz').style.display = status1;
+                document.getElementById('form_nav_uz_a1').style.display = status2;
+                document.getElementById('form_nav_uz_b1').style.display = status1;
             }                
         </script>
     </head>
-    <body>
+    <body>        
         <?php
             if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
             {
