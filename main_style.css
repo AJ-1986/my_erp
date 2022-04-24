@@ -10,6 +10,24 @@
 #tworzenie_uz {
     display: none;
 }
+#form_nav_uz_a1 {
+    display: inline;
+}
+#form_nav_uz_a2 {
+    display: inline;
+}
+#form_nav_uz_a3 {
+    display: inline;
+}
+#form_nav_uz_b1 {
+    display: none;
+}
+#form_nav_uz_b2 {
+    display: none;
+}
+#form_nav_uz_b3 {
+    display: none;
+}
 /* --------------------- */
 
 /* Style bazowe - główne */
