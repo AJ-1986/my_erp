@@ -98,7 +98,8 @@ global $pol_db;
                         // ------------
                     }
                 ?>
-            </div>            
+            </div>
+            <div class="spacer"></div>            
             <div class="footer">
                 <p class="footer">&copy; MY_ERP <?php echo gmdate('Y'); ?></p>                    
             </div>            

@@ -175,7 +175,13 @@ div.right_site {
     width: 75%;
     float: left;
 }
+div.spacer {
+    width: 100%;
+    height: 50px;
+    float: left;
+}
 div.footer {
+    margin-bottom: 10px;
     background-color: darkmagenta;    
     width: 100%;
     height: 70px;        
