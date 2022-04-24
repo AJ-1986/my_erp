@@ -59,6 +59,68 @@ mysqli_close($pol_db);
 }
 // -------------------------------------------
 
+// funkcja aktualizuje haslo uzytkownika
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['aktualizacja_hasla_uz'] == '1') {
+        
+        if(!empty($_POST['paswd_uz1']) AND !empty($_POST['paswd_uz2']) AND $_POST['paswd_uz1'] == $_POST['paswd_uz2']) {
+            
+            $haslo = md5($_POST['paswd_uz1']);
+            $q = "UPDATE `uzytkownicy` SET `haslo` = '$haslo' WHERE `uzytkownicy`.`id_uz` = '$_POST[id_uzytkownika]'";
+            $sql = mysqli_query($pol_db, $q);
+
+            if(!$sql) die('Coś poszło nie tak z aktualizacją hasła użytkownika - sprawdź połączenie z bazą danych '); 
+            else {
+                echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=3";
+                </script>
+            ';
+            }
+        }
+        else {
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=4";
+                </script>
+            ';
+        }
+    }
+}
+// -------------------------------------
+
+// funkcja aktualizuje dane uzytkownika
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['aktualizacja_danych_uzytkownika'] == '1') {
+
+        $q = "UPDATE `uzytkownicy` SET `imie` = '$_POST[imie_uz]', 
+                `nazwisko` = '$_POST[nazwisko_uz]', 
+                `e-mail` = '$_POST[email_uz]' 
+                WHERE `uzytkownicy`.`id_uz` = '$_POST[id_uzytkownika]'"; 
+        
+        $sql = mysqli_query($pol_db, $q);
+
+        if(!$sql) die('Coś poszło nie tak z aktualizacją danych użytkownika - sprawdź połączenie z bazą danych '); 
+        else {
+            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            $akt_data = gmdate('Y-m-d');
+            $akt_godz = gmdate('H:i:s');
+            $kom_zd = 'Zaktualizowano dane użytkownika o loginie: '. $_POST['login_uzytkownika'] .'.';
+            $q = "INSERT INTO system_log (log_id, user_id, data, godzina, zdarzenie)
+                    VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
+            $sql = mysqli_query($pol_db, $q);
+
+            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            // ---------------------------------------------------
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=2";
+                </script>
+            ';
+        }        
+    }
+}
+
 // funkcja aktualizuje dane podmiotu
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_danych_podmiotu'] == '1') {

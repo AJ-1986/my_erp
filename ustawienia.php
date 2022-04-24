@@ -8,6 +8,103 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         Na tej stronie dokonasz wszelkich modyfikacji związanych z Twoimi informacjami dotyczącymi użytkowników, podmiotów.
                     </p>                    
         ';
+        // zarządzanie użytkownikami
+        echo '
+                    <fieldset class="us_bazowy">
+                        <legend class="us_bazowy">Zarządzanie użytkownikami</legend>
+                        <p class="bazowy">Aby utworzyć nowego użytkownika lub edytować dane istniejącego wystarczy kliknąć w odpowiedni przycisk poniżej.</p>
+                        <p class="bazowy">
+                            <button id="form_nav_uz_a1" onClick="form_tw_nowego_uz(\'inline\', \'none\')">Utwórz nowego użytkownika</button><button id="form_nav_uz_b1" onClick="form_tw_nowego_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
+                            <button id="form_nav_uz_a2" onClick="form_ed_danych_uz(\'inline\', \'none\')">Edytuj swoje dane</button><button id="form_nav_uz_b2" onClick="form_ed_danych_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
+                            <button id="form_nav_uz_a3" onClick="form_ed_hasla_uz(\'inline\', \'none\')">Zmień swoje hasło</button><button id="form_nav_uz_b3" onClick="form_ed_hasla_uz(\'none\', \'inline\')">Ukryj</button>
+                        </p>
+                        <span id="tworzenie_uz">
+                            <p class="bazowy">Funkcja dostępna już wkrótce...</p>
+                        </span>
+        ';
+        $q = "SELECT * FROM uzytkownicy WHERE id_uz LIKE '$_SESSION[user_SQL_id]'";
+        $sql = mysqli_query($pol_db, $q);
+        while($query_data = mysqli_fetch_row($sql)) {
+            echo '
+                        <span id="ed_danych_uz">
+                            <form method="post" action="function.php">
+                                <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
+                                <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
+                                <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
+                                <table>
+                                    <tr>
+                                        <td class="us_bazowy">Login:</td>
+                                        <td class="us_bazowy2">'. $query_data[1] .' (nie podlega zmianom)</td>                                
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Imię:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'"></td>                                
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Nazwisko:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'"></td>                                
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">E-mail:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'"></td>                                
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Data rejestracji:</td>
+                                        <td class="us_bazowy2">'. $query_data[6] .'</td>                                
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Godzina rejestracji:</td>
+                                        <td class="us_bazowy2">'. $query_data[7] .'</td>                                
+                                    </tr>
+                                </table>
+                                <p class="bazowy">
+                                    <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
+            if($_GET['status'] == '2') {
+                echo '
+                                    &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                ';
+            }
+            echo '
+                                </p>
+            ';
+        }
+        echo '
+                        </form></span>
+                        <span id="ed_hasla_uz">
+                            <p class="bazowy">Zmiana hasła dostępu do konta.</p>
+                            <form method="post" action="function.php">
+                                <input type="hidden" name="aktualizacja_hasla_uz" value="1">
+                                <input type="hidden" name="id_uzytkownika" value="'. $_SESSION['user_SQL_id'] .'">
+                                <table>
+                                    <tr>
+                                        <td class="us_bazowy">Hasło:</td>
+                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Powtórz hasło:</td>
+                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz2"></td>
+                                    </tr>
+                                </table>
+                                <p class="bazowy">
+                                    <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';            
+            if($_GET['status'] == '3') {
+                echo '
+                                    &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                ';
+            }
+            if($_GET['status'] == '4') {
+                echo '
+                                    <br><br><font color="red"><b>Błąd! Pola formularza nie mogą być puste<br>oraz różnić się wprowadzonymi danymi</b></font>
+                ';
+            }
+                echo '    
+                            </form>
+                        </span>
+                    </fieldset>
+                    <p>&nbsp;</p>
+        ';
+        // -------------------------
+
         // pobieranie podmiotów z bazy danych plus tworzenie formularza do edycji danych
         $q = "SELECT * FROM podmioty WHERE id_podmiotu LIKE '$_SESSION[podmiot_id]'";
         $sql = mysqli_query($pol_db, $q);
