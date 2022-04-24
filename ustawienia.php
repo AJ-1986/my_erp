@@ -15,7 +15,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         <p class="bazowy">Aby utworzyć nowego użytkownika lub edytować dane istniejącego wystarczy kliknąć w odpowiedni przycisk poniżej.</p>
                         <p class="bazowy">
                             <button onClick="">Utwórz nowego użytkownika</button>&nbsp;&nbsp;|&nbsp;
-                            <button onClick="">Edytuj swoje dane</button>
+                            <button onClick="">Edytuj swoje dane</button>&nbsp;&nbsp;|&nbsp;
+                            <button onClick="">Zmień swoje hasło</button>
                         </p>
         ';
         $q = "SELECT * FROM uzytkownicy WHERE id_uz LIKE '$_SESSION[user_SQL_id]'";
