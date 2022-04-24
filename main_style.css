@@ -1,7 +1,17 @@
 /* Główny arkusz styli dla MY_ERP */
-/* Sekcja do skryptów JS */
 
+/* Sekcja do skryptów JS */
+#ed_danych_uz {
+    display: none;
+}
+#ed_hasla_uz {
+    display: none;
+}
+#tworzenie_uz {
+    display: none;
+}
 /* --------------------- */
+
 /* Style bazowe - główne */
 h1.bazowy {
     margin-left: 20px;
