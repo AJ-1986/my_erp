@@ -26,6 +26,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     <form method="post" action="function.php">
                         <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
                         <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
+                        <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
                         <table>
                             <tr>
                                 <td class="us_bazowy">Login:</td>
