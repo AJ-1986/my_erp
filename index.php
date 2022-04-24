@@ -18,14 +18,14 @@ global $pol_db;
         <title>MY ERP</title>
         <link rel="stylesheet" href="main_style.css">
         <script>
-            function form_ed_danych_uz(status) {
-                document.getElementById('ed_danych_uz').style.display = status;
+            function form_ed_danych_uz(status1, status2) {
+                document.getElementById('ed_danych_uz').style.display = status1;
             }
-            function form_ed_hasla_uz(status) {
-                document.getElementById('ed_hasla_uz').style.display = status;
+            function form_ed_hasla_uz(status1, status2) {
+                document.getElementById('ed_hasla_uz').style.display = status1;
             } 
-            function form_tw_nowego_uz(status) {
-                document.getElementById('tworzenie_uz').style.display = status;
+            function form_tw_nowego_uz(status1, status2) {
+                document.getElementById('tworzenie_uz').style.display = status1;
             }                
         </script>
     </head>
