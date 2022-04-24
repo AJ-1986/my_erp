@@ -6,6 +6,12 @@ include './db_config.php'; // plik konfiguracyjny bazy
 $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname);
 global $pol_db;
 // --------------------------------
+
+// część odpowiadająca za pojawianie i znikanie formularzy w USTAWIENIA.PHP ;)
+if(!empty($_GET['status']) AND $_GET['status'] == '3' OR $_GET['status'] == '4') {
+    $form_wys = 'onLoad="form_ed_hasla_uz(\'inline\', \'none\')"';
+}
+// ----------------------------------------------------------
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL">
@@ -35,7 +41,7 @@ global $pol_db;
             }                
         </script>
     </head>
-    <body>        
+    <body <?php echo $form_wys; ?>>        
         <?php
             if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
             {
