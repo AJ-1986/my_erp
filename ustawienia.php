@@ -22,7 +22,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             <p class="bazowy">Funkcja dostępna już wkrótce...</p>
                         </span>
         ';
-        $q = "SELECT * FROM uzytkownicy WHERE id_uz LIKE '$_SESSION[user_SQL_id]'";
+        $q = "SELECT * FROM `uzytkownicy` WHERE `id_uz` LIKE '$_SESSION[user_SQL_id]'";
         $sql = mysqli_query($pol_db, $q);
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
@@ -106,7 +106,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         // -------------------------
 
         // pobieranie podmiotów z bazy danych plus tworzenie formularza do edycji danych
-        $q = "SELECT * FROM podmioty WHERE id_podmiotu LIKE '$_SESSION[podmiot_id]'";
+        $q = "SELECT * FROM `podmioty` WHERE `id_podmiotu` LIKE '$_SESSION[podmiot_id]'";
         $sql = mysqli_query($pol_db, $q);
 
         while($query_data = mysqli_fetch_row($sql)) {
