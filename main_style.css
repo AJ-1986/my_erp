@@ -164,6 +164,7 @@ div.left_site {
     float: left;    
 }
 span.left_main_navigation {
+    display: block;
     margin: 10px auto;    
     width: 125px;
 }
