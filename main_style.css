@@ -158,8 +158,9 @@ span.right_nav_header {
     color: white;    
 }
 div.left_site {
+    margin-top: 10px;
     background-color: silver;
-    border-right: 3px solid gray;
+    border: 3px solid gray;    
     width: 20%;
     float: left;    
 }
