@@ -28,16 +28,18 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         <a href="index.php?auth=1&historia_zd=1">Zobacz wszystkie zdarzenia.</a></p>
                         <table class="historia_zd">
                         <tr>
-                        <td class="historia_zd1">Użytkownik</td>
-                        <td class="historia_zd1">Data</td>
-                        <td class="historia_zd1">*Godzina</td>
-                        <td class="historia_zd1">Opis zdarzenia</td>
+                            <td class="historia_zd1">ID</td>
+                            <td class="historia_zd1">Użytkownik</td>
+                            <td class="historia_zd1">Data</td>
+                            <td class="historia_zd1">*Godzina</td>
+                            <td class="historia_zd1">Opis zdarzenia</td>
                         </tr>   
             ';
 
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
                             <tr class="historia_zd2">
+                                <td class="historia_zd2">'. $query_data[0] .'</td>
                                 <td class="historia_zd2">'. $query_data[1] .'</td>
                                 <td class="historia_zd2">'. $query_data[2] .'</td>
                                 <td class="historia_zd2">'. $query_data[3] .'</td>
