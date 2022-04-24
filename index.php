@@ -64,7 +64,7 @@ if(!empty($_GET['status']) AND $_GET['status'] == '2') {
                         Aktualnie pracujesz na podmiocie:
                         <?php
                             // pobieranie podmiotów z bazy danych
-                                $q = "SELECT nazwa_podmiotu FROM podmioty WHERE id_podmiotu LIKE '$_SESSION[podmiot_id]'";
+                                $q = "SELECT `nazwa_podmiotu` FROM `podmioty` WHERE `id_podmiotu` LIKE '$_SESSION[podmiot_id]'";
                                 $sql = mysqli_query($pol_db, $q);
 
                                 while($query_data = mysqli_fetch_row($sql)) {
@@ -80,7 +80,7 @@ if(!empty($_GET['status']) AND $_GET['status'] == '2') {
                         <select class="login_pod_list" id="podmiot" name="podmiot">
                             <?php
                             // pobieranie podmiotów z bazy danych
-                                $q2 = "SELECT *  FROM podmioty";
+                                $q2 = "SELECT *  FROM `podmioty`";
                                 $sql2 = mysqli_query($pol_db, $q2);
 
                                 while($query_data2 = mysqli_fetch_row($sql2)) {
