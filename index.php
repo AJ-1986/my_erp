@@ -25,15 +25,15 @@ global $pol_db;
         ?>
         <div class="main_page">
             <div class="main_header">
-                <div class="logo">MY_ERP</div>                
-                <div class="right_nav_header">
+                <span class="logo">MY_ERP</span>                
+                <span class="right_nav_header">
                     <a class="link_header" href="index.php?auth=1&strona_glowna=1">Strona główna</a>&nbsp;&nbsp;|&nbsp;
                     <a class="link_header" href="index.php?auth=1&ustawienia=1">Ustawienia</a>&nbsp;&nbsp;|&nbsp;
                     <a class="link_header" href="function.php?wyloguj=1">Wyloguj</a>
-                </div>                
+                </span>                
             </div>            
             <div class="left_site">
-                <div class="index_left_podmiot">
+                <span class="index_left_podmiot">
                     <p class="index_left">
                         Aktualnie pracujesz na podmiocie:
                         <?php
@@ -68,14 +68,14 @@ global $pol_db;
                         <input class="login_submit" type="submit" value="Zmień">
                         </p>
                     </form>
-                </div><hr>
-                <div class="left_main_navigation">
+                </span><hr>
+                <span class="left_main_navigation">
                     <a href="index.php"><img class="img_buttons" src="images/faktury_sprzedazy_button.jpg" alt="Faktury sprzedaży"></a><br><br>
                     <a href="index.php"><img class="img_buttons" src="images/faktury_zakupu_button.jpg" alt="Faktury zakupu"></a><br><br>
                     <a href="index.php"><img class="img_buttons" src="images/kontrahenci_button.jpg" alt="Kontrahenci"></a><br><br>
                     <a href="index.php"><img class="img_buttons" src="images/magazyn_button.jpg" alt="Magazyn"></a><br><br>
                     <a href="index.php"><img class="img_buttons" src="images/raporty_button.jpg" alt="Raporty"></a><br><br>
-                </div>
+                </span>
             </div>
             <div class="right_site">
                 <p class="demo">

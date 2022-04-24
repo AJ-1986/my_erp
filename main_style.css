@@ -135,7 +135,7 @@ div.main_header {
     width: 100%;
     float: left;    
 }
-div.logo {    
+span.logo {    
     width: 300px;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 48px;
@@ -149,7 +149,7 @@ a.link_header {
     font-size: 14px;
     color: aqua;
 }
-div.right_nav_header {
+span.right_nav_header {
     margin-top: 24px;
     margin-right: 20px;
     text-align: right;    
@@ -163,7 +163,7 @@ div.left_site {
     width: 20%;
     float: left;    
 }
-div.left_main_navigation {
+span.left_main_navigation {
     margin: 10px auto;    
     width: 125px;
 }
@@ -187,7 +187,7 @@ p.footer {
     color: rgb(255, 255, 255);
     text-align: center;
 }
-div.index_left_podmiot {
+span.index_left_podmiot {
     width: 100%;
 }
 p.index_left {
