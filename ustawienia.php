@@ -23,8 +23,9 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         $sql = mysqli_query($pol_db, $q);
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
-                        <span id="ed_danych_uz"><form method="post" action="function.php">
-                            <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
+                        <span id="ed_danych_uz">
+                            <form method="post" action="function.php">
+                                <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
                                 <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
                                 <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
                                 <table>
@@ -53,15 +54,15 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                         <td class="us_bazowy2">'. $query_data[7] .'</td>                                
                                     </tr>
                                 </table>
-                            <p class="bazowy">
-                                <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
+                                <p class="bazowy">
+                                    <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
             if($_GET['status'] == '2') {
                 echo '
-                                &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
                 ';
             }
             echo '
-                            </p>
+                                </p>
             ';
         }
         echo '
@@ -69,6 +70,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         <span id="ed_hasla_uz">
                             <p class="bazowy">Zmiana hasła dostępu do konta.</p>
                             <form method="post" action="function.php">
+                                <input type="hidden" name="aktualizacja_hasla_uz" value="1">
+                                <input type="hidden" name="id_uzytkownika" value="'. $_SESSION['user_SQL_id'] .'">
                                 <table>
                                     <tr>
                                         <td class="us_bazowy">Hasło:</td>
