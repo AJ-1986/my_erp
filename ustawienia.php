@@ -8,6 +8,17 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         Na tej stronie dokonasz wszelkich modyfikacji związanych z Twoimi informacjami dotyczącymi użytkowników, podmiotów.
                     </p>                    
         ';
+        // zarządzanie użytkownikami
+        echo '
+                    <fieldset class="us_bazowy">
+                        <legend class="us_bazowy">Zarządzanie użytkownikami</legend>
+                        <p>Tymczasowy tekst...</p>
+        ';
+        echo '
+                    </fieldset>
+                    <p>&nbsp;</p>
+        ';
+        // -------------------------
         // pobieranie podmiotów z bazy danych plus tworzenie formularza do edycji danych
         $q = "SELECT * FROM podmioty WHERE id_podmiotu LIKE '$_SESSION[podmiot_id]'";
         $sql = mysqli_query($pol_db, $q);
