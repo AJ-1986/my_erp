@@ -59,6 +59,13 @@ mysqli_close($pol_db);
 }
 // -------------------------------------------
 
+// funkcja aktualizuje haslo uzytkownika
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['aktualizacja_hasla_uz'] == '1') {
+        
+    }
+}
+
 // funkcja aktualizuje dane uzytkownika
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_danych_uzytkownika'] == '1') {
