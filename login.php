@@ -39,7 +39,7 @@ global $pol_db;
                         <select class="login_pod_list" id="podmiot" name="podmiot">
                             <?php
                             // pobieranie podmiotów z bazy danych
-                                $q = "SELECT *  FROM podmioty";
+                                $q = "SELECT *  FROM `podmioty`";
                                 $sql = mysqli_query($pol_db, $q);
 
                                 while($query_data = mysqli_fetch_row($sql)) {
