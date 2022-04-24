@@ -9,7 +9,10 @@ global $pol_db;
 
 // część odpowiadająca za pojawianie i znikanie formularzy w USTAWIENIA.PHP ;)
 if(!empty($_GET['status']) AND $_GET['status'] == '3' OR $_GET['status'] == '4') {
-    $form_wys = 'onLoad="form_ed_hasla_uz(\'inline\', \'none\')"';
+    $form_wys = 'onLoad="form_ed_hasla_uz(\'inline\', \'none\')"';    
+}
+if(!empty($_GET['status']) AND $_GET['status'] == '2') {
+    $form_wys = 'onLoad="form_ed_danych_uz(\'inline\', \'none\')"';
 }
 // ----------------------------------------------------------
 ?>
@@ -41,7 +44,7 @@ if(!empty($_GET['status']) AND $_GET['status'] == '3' OR $_GET['status'] == '4')
             }                
         </script>
     </head>
-    <body <?php echo $form_wys; ?>>        
+    <body<?php echo " $form_wys"; ?>>        
         <?php
             if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
             {
