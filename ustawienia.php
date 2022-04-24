@@ -14,10 +14,13 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                         <legend class="us_bazowy">Zarządzanie użytkownikami</legend>
                         <p class="bazowy">Aby utworzyć nowego użytkownika lub edytować dane istniejącego wystarczy kliknąć w odpowiedni przycisk poniżej.</p>
                         <p class="bazowy">
-                            <button onClick="">Utwórz nowego użytkownika</button>&nbsp;&nbsp;|&nbsp;
-                            <button onClick="">Edytuj swoje dane</button>&nbsp;&nbsp;|&nbsp;
-                            <button onClick="">Zmień swoje hasło</button>
+                            <button id="form_nav_uz_a1" onClick="form_tw_nowego_uz(\'inline\', \'none\')">Utwórz nowego użytkownika</button><button id="form_nav_uz_b1" onClick="form_tw_nowego_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
+                            <button id="form_nav_uz_a2" onClick="form_ed_danych_uz(\'inline\', \'none\')">Edytuj swoje dane</button><button id="form_nav_uz_b2" onClick="form_ed_danych_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
+                            <button id="form_nav_uz_a3" onClick="form_ed_hasla_uz(\'inline\', \'none\')">Zmień swoje hasło</button><button id="form_nav_uz_b3" onClick="form_ed_hasla_uz(\'none\', \'inline\')">Ukryj</button>
                         </p>
+                        <span id="tworzenie_uz">
+                            <p class="bazowy">Funkcja dostępna już wkrótce...</p>
+                        </span>
         ';
         $q = "SELECT * FROM uzytkownicy WHERE id_uz LIKE '$_SESSION[user_SQL_id]'";
         $sql = mysqli_query($pol_db, $q);

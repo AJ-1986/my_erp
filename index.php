@@ -6,6 +6,15 @@ include './db_config.php'; // plik konfiguracyjny bazy
 $pol_db = mysqli_connect($dbhost, $dbusername, $dbuserpassword, $default_dbname);
 global $pol_db;
 // --------------------------------
+
+// część odpowiadająca za pojawianie i znikanie formularzy w USTAWIENIA.PHP ;)
+if(!empty($_GET['status']) AND $_GET['status'] == '3' OR $_GET['status'] == '4') {
+    $form_wys = 'onLoad="form_ed_hasla_uz(\'inline\', \'none\')"';    
+}
+if(!empty($_GET['status']) AND $_GET['status'] == '2') {
+    $form_wys = 'onLoad="form_ed_danych_uz(\'inline\', \'none\')"';
+}
+// ----------------------------------------------------------
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL">
@@ -17,8 +26,25 @@ global $pol_db;
         <meta name="autor" content="Adam Jurewicz (proxweb@outlook.com)">
         <title>MY ERP</title>
         <link rel="stylesheet" href="main_style.css">
+        <script>
+            function form_ed_danych_uz(status1, status2) {
+                document.getElementById('ed_danych_uz').style.display = status1;
+                document.getElementById('form_nav_uz_a2').style.display = status2;
+                document.getElementById('form_nav_uz_b2').style.display = status1;
+            }
+            function form_ed_hasla_uz(status1, status2) {
+                document.getElementById('ed_hasla_uz').style.display = status1;
+                document.getElementById('form_nav_uz_a3').style.display = status2;
+                document.getElementById('form_nav_uz_b3').style.display = status1;
+            } 
+            function form_tw_nowego_uz(status1, status2) {
+                document.getElementById('tworzenie_uz').style.display = status1;
+                document.getElementById('form_nav_uz_a1').style.display = status2;
+                document.getElementById('form_nav_uz_b1').style.display = status1;
+            }                
+        </script>
     </head>
-    <body>
+    <body<?php echo " $form_wys"; ?>>        
         <?php
             if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id'])
             {
