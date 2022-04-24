@@ -22,9 +22,49 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         $sql = mysqli_query($pol_db, $q);
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
+                    <form method="post" action="function.php">
+                        <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
+                        <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
+                        <table>
+                            <tr>
+                                <td class="us_bazowy">Login:</td>
+                                <td class="us_bazowy2">'. $query_data[1] .' (nie podlega zmianom)</td>                                
+                            </tr>
+                            <tr>
+                                <td class="us_bazowy">Imię:</td>
+                                <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'"></td>                                
+                            </tr>
+                            <tr>
+                                <td class="us_bazowy">Nazwisko:</td>
+                                <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'"></td>                                
+                            </tr>
+                            <tr>
+                                <td class="us_bazowy">E-mail:</td>
+                                <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'"></td>                                
+                            </tr>
+                            <tr>
+                                <td class="us_bazowy">Data rejestracji:</td>
+                                <td class="us_bazowy2">'. $query_data[6] .'</td>                                
+                            </tr>
+                            <tr>
+                                <td class="us_bazowy">Godzina rejestracji:</td>
+                                <td class="us_bazowy2">'. $query_data[7] .'</td>                                
+                            </tr>
+                        </table>
+                    
+                    <p class="bazowy">
+                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';
+            if($_GET['status'] == '2') {
+                echo '
+                            &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                ';
+            }
+            echo '
+                    </p>
             ';
         }
         echo '
+                    </form>
                     </fieldset>
                     <p>&nbsp;</p>
         ';
