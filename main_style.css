@@ -136,12 +136,11 @@ div.main_header {
     float: left;    
 }
 span.logo {    
-    width: 300px;    
+    margin-left: 10px;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 48px;
     font-weight: bold;
-    color: white;
-    text-align: center;
+    color: white;    
     float: left;      
 }
 a.link_header {    
