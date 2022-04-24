@@ -96,6 +96,12 @@ global $pol_db;
                             include './ustawienia.php'; // podłączenie pliku ustawienia.php
                         }
                         // ------------
+
+                        // historia zdarzeń
+                        if($_GET['historia_zd'] == '1') {
+                            include './historia_zd.php'; // podłączenie pliku historia_zd.php
+                        }
+                        // ------------
                     }
                 ?>
             </div>
