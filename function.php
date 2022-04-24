@@ -64,7 +64,26 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_hasla_uz'] == '1') {
         
         if(!empty($_POST['paswd_uz1']) AND !empty($_POST['paswd_uz2']) AND $_POST['paswd_uz1'] == $_POST['paswd_uz2']) {
+            
+            $haslo = md5($_POST['paswd_uz1']);
+            $q = "UPDATE `uzytkownicy` SET `haslo` = '$haslo' WHERE `uzytkownicy`.`id_uz` = '$_POST[id_uzytkownika]'";
+            $sql = mysqli_query($pol_db, $q);
 
+            if(!$sql) die('Coś poszło nie tak z aktualizacją hasła użytkownika - sprawdź połączenie z bazą danych '); 
+            else {
+                echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=3";
+                </script>
+            ';
+            }
+        }
+        else {
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=4";
+                </script>
+            ';
         }
     }
 }
@@ -98,8 +117,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     document.location="index.php?auth=1&ustawienia=1&status=2";
                 </script>
             ';
-        }
-        echo mysqli_error();
+        }        
     }
 }
 

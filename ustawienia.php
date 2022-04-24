@@ -89,6 +89,11 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                     &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
                 ';
             }
+            if($_GET['status'] == '4') {
+                echo '
+                                    <br><br><font color="red"><b>Błąd! Pola formularza nie mogą być puste<br>oraz różnić się wprowadzonymi danymi</b></font>
+                ';
+            }
                 echo '    
                             </form>
                         </span>
