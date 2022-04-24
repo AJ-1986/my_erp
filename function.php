@@ -12,7 +12,7 @@ if($_POST['logowanie'] == '1') {
     if(!$pol_db) die('Błąd z połączeniem - sprawdź dane do bazy danych');
     else {
         $haslo_md5 = md5($_POST['haslo_uz']);        
-        $q = "SELECT id_uz  FROM uzytkownicy WHERE login LIKE '$_POST[login_uz]' AND haslo LIKE '$haslo_md5'";
+        $q = "SELECT `id_uz`  FROM `uzytkownicy` WHERE login LIKE '$_POST[login_uz]' AND haslo LIKE '$haslo_md5'";
         $sql = mysqli_query($pol_db, $q);
 
         if(!$query_data = mysqli_fetch_row($sql)) {
@@ -32,7 +32,7 @@ if($_POST['logowanie'] == '1') {
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Udane logowanie użytkownika.';
-            $q = "INSERT INTO system_log (log_id, user_id, data, godzina, zdarzenie)
+            $q = "INSERT INTO `system_log` (`log_id`, `user_id`, `data`, `godzina`, `zdarzenie`)
                     VALUES (NULL, '$query_data[0]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
@@ -106,7 +106,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Zaktualizowano dane użytkownika o loginie: '. $_POST['login_uzytkownika'] .'.';
-            $q = "INSERT INTO system_log (log_id, user_id, data, godzina, zdarzenie)
+            $q = "INSERT INTO `system_log` (`log_id`, `user_id`, `data`, `godzina`, `zdarzenie`)
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
@@ -124,17 +124,17 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 // funkcja aktualizuje dane podmiotu
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_danych_podmiotu'] == '1') {
-        $q = "UPDATE podmioty SET nazwa_podmiotu = '$_POST[nazwa_podmiotu]',
-                pelna_nazwa_podmiotu = '$_POST[pelna_nazwa_podmiotu]',
-                adres = '$_POST[adres_podmiotu]',
-                numer = '$_POST[numer_lok_podmiotu]',
-                kod_pocztowy = '$_POST[kod_pocztowy_podmiotu]',
-                miasto = '$_POST[miasto_podmiotu]',
-                nip = '$_POST[nip_podmiotu]',
-                regon = '$_POST[regon_podmiotu]',
-                telefon = '$_POST[telefon_podmiotu]',
-                email = '$_POST[email_podmiotu]'
-                WHERE podmioty . id_podmiotu = '$_POST[id_podmiotu]'";
+        $q = "UPDATE `podmioty` SET `nazwa_podmiotu` = '$_POST[nazwa_podmiotu]',
+                `pelna_nazwa_podmiotu` = '$_POST[pelna_nazwa_podmiotu]',
+                `adres` = '$_POST[adres_podmiotu]',
+                `numer` = '$_POST[numer_lok_podmiotu]',
+                `kod_pocztowy` = '$_POST[kod_pocztowy_podmiotu]',
+                `miasto` = '$_POST[miasto_podmiotu]',
+                `nip` = '$_POST[nip_podmiotu]',
+                `regon` = '$_POST[regon_podmiotu]',
+                `telefon` = '$_POST[telefon_podmiotu]',
+                `email` = '$_POST[email_podmiotu]'
+                WHERE `podmioty`.`id_podmiotu` = '$_POST[id_podmiotu]'";
         
         $sql = mysqli_query($pol_db, $q);
 
@@ -144,7 +144,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Zaktualizowano dane podmiotu: '. $_POST['nazwa_podmiotu'] .'.';
-            $q = "INSERT INTO system_log (log_id, user_id, data, godzina, zdarzenie)
+            $q = "INSERT INTO `system_log` (`log_id`, `user_id`, `data`, `godzina`, `zdarzenie`)
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
