@@ -85,7 +85,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             // ---------------------------------------------------
             echo '
                 <script>
-                    document.location="index.php?auth=1&ustawienia=1&status=5";
+                    document.location="index.php?auth=1&ustawienia=1&status=5&logg_uz='. $_POST['login_uz'] .'";
                 </script>
             ';
         }
