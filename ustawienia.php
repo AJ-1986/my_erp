@@ -19,7 +19,45 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             <button id="form_nav_uz_a3" onClick="form_ed_hasla_uz(\'inline\', \'none\')">Zmień swoje hasło</button><button id="form_nav_uz_b3" onClick="form_ed_hasla_uz(\'none\', \'inline\')">Ukryj</button>
                         </p>
                         <span id="tworzenie_uz">
-                            <p class="bazowy">Funkcja dostępna już wkrótce...</p>
+                            <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>
+                            <form method="post" action="function.php">
+                                <input type="hidden" name="tworzenie_nowego_uzytkownika" value="1">
+                                <table>
+                                    <tr>
+                                        <td class="us_bazowy">Login:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="login_uz"></td>
+                                        <td class="us_form_adn">Login musi mieć minimum 5 znaków.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Hasło:</td>
+                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz1"></td>
+                                        <td class="us_form_adn">Hasło musi mieć minimum 5 znaków.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Powtórz hasło:</td>
+                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz2"></td>
+                                        <td class="us_form_adn"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Imię:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="imie_uz"></td>
+                                        <td class="us_form_adn"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">Nazwisko:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="imie_uz"></td>
+                                        <td class="us_form_adn"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="us_bazowy">E-mail:</td>
+                                        <td><input class="us_pod_tekst" type="text" name="email_uz"></td>
+                                        <td class="us_form_adn"></td>
+                                    </tr>
+                                </table>
+                                <p class="bazowy">
+                                    <button onClick="form_nowy_uz()">Utwórz użytkownika</button>
+                                </p>
+                            </form>
                         </span>
         ';
         $q = "SELECT * FROM `uzytkownicy` WHERE `id_uz` LIKE '$_SESSION[user_SQL_id]'";
