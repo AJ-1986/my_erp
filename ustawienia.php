@@ -19,7 +19,29 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             <button id="form_nav_uz_a3" onClick="form_ed_hasla_uz(\'inline\', \'none\')">Zmień swoje hasło</button><button id="form_nav_uz_b3" onClick="form_ed_hasla_uz(\'none\', \'inline\')">Ukryj</button>
                         </p>
                         <span id="tworzenie_uz">
-                            <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>
+                            <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>';
+                            if($_GET['status'] == '5') {
+                            echo '
+                            <p class="bazowy"><font color="#025802"><b>Nowy użytkownik został utworzony!</b></font><br><br>
+                            Dane utworzonego użytkownika:</p>
+                            ';
+                            $q = "SELECT * FROM `uzytkownicy` WHERE `login` LIKE '$_GET[logg_uz]'";
+                            $sql = mysqli_query($pol_db, $q);
+
+                            while($query_data = mysqli_fetch_row($sql)) {
+                                echo '
+                                <p class="bazowy">
+                                <b>Login:</b> <i>'. $query_data[1] .'</i>.<br>
+                                <b>Imię:</b> <i>'. $query_data[3] .'</i>.<br>
+                                <b>Nazwisko:</b> <i>'. $query_data[4] .'</i>.<br>
+                                <b>E-mail:</b> <i>'. $query_data[5] .'</i>.<br>
+                                <b>Data rejestracji:</b> <i>'. $query_data[6] .'</i>.<br>
+                                <b>Godzina rejestracji:</b> <i>'. $query_data[7] .'</i>.<br>
+                                </p>
+                                ';                                
+                                }
+                            }
+                            echo '
                             <form method="post" action="function.php">
                                 <input type="hidden" name="tworzenie_nowego_uzytkownika" value="1">
                                 <table>

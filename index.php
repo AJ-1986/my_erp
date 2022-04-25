@@ -14,6 +14,9 @@ if(!empty($_GET['status']) AND $_GET['status'] == '3' OR $_GET['status'] == '4')
 if(!empty($_GET['status']) AND $_GET['status'] == '2') {
     $form_wys = 'onLoad="form_ed_danych_uz(\'inline\', \'none\')"';
 }
+if(!empty($_GET['status']) AND $_GET['status'] == '5') {
+    $form_wys = 'onLoad="form_tw_nowego_uz(\'inline\', \'none\')"';
+}
 // ----------------------------------------------------------
 ?>
 <!DOCTYPE html>
