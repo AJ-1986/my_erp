@@ -59,6 +59,14 @@ mysqli_close($pol_db);
 }
 // -------------------------------------------
 
+// zapis nowego użytkownika do bazy danych
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['tworzenie_nowego_uzytkownika'] == '1') {
+        
+    }
+}
+// --------------------------------------
+
 // funkcja aktualizuje haslo uzytkownika
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_hasla_uz'] == '1') {
