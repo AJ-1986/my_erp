@@ -66,6 +66,14 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         $akt_data = gmdate('Y-m-d');
         $akt_godz = gmdate('H:i:s');
         $haslo = md5($_POST['haslo_uz1']);
+
+        $q = "INSERT INTO `uzytkownicy` (`id_uz`, `login`, `haslo`, `imie`, `nazwisko`, `e-mail`, `data_rej`, `godz_rej`, `super_uz`)
+            VALUES (NULL, '$_POST[login_uz]', '$haslo', '$_POST[imie_uz]', '$_POST[nazwisko_uz]', '$_POST[email_uz]', '$akt_data', '$akt_godz', 0)";
+        
+        $sql = mysqli_query($pol_db, $q);
+        if(!$sql) die("Nie udało się zapisać nowego użytkownika - sprawdź połączenie z bazą danych!"); {
+
+        }
     }
 }
 // --------------------------------------
