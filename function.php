@@ -63,6 +63,9 @@ mysqli_close($pol_db);
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['tworzenie_nowego_uzytkownika'] == '1') {
         
+        $akt_data = gmdate('Y-m-d');
+        $akt_godz = gmdate('H:i:s');
+        $haslo = md5($_POST['haslo_uz1']);
     }
 }
 // --------------------------------------
