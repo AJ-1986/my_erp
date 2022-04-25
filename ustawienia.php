@@ -25,37 +25,37 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <table>
                                     <tr>
                                         <td class="us_bazowy">Login:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="login_uz"></td>
+                                        <td><input class="us_pod_tekst" type="text" name="login_uz" minlength="5" required></td>
                                         <td class="us_form_adn">Login musi mieć minimum 5 znaków.</td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz1"></td>
+                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz1" minlength="5" required></td>
                                         <td class="us_form_adn">Hasło musi mieć minimum 5 znaków.</td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Powtórz hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz2"></td>
+                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz2" required></td>
                                         <td class="us_form_adn"></td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Imię:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="imie_uz"></td>
+                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" required></td>
                                         <td class="us_form_adn"></td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Nazwisko:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="imie_uz"></td>
+                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" required></td>
                                         <td class="us_form_adn"></td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">E-mail:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="email_uz"></td>
+                                        <td><input class="us_pod_tekst" type="text" name="email_uz" required></td>
                                         <td class="us_form_adn"></td>
                                     </tr>
                                 </table>
                                 <p class="bazowy">
-                                    <button onClick="form_nowy_uz()">Utwórz użytkownika</button>
+                                    <input class="us_bazowy_sub" type="submit" value="Utwórz nowego użytkownika">
                                 </p>
                             </form>
                         </span>
