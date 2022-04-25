@@ -14,6 +14,9 @@ if(!empty($_GET['status']) AND $_GET['status'] == '3' OR $_GET['status'] == '4')
 if(!empty($_GET['status']) AND $_GET['status'] == '2') {
     $form_wys = 'onLoad="form_ed_danych_uz(\'inline\', \'none\')"';
 }
+if(!empty($_GET['status']) AND $_GET['status'] == '5') {
+    $form_wys = 'onLoad="form_tw_nowego_uz(\'inline\', \'none\')"';
+}
 // ----------------------------------------------------------
 ?>
 <!DOCTYPE html>
@@ -41,7 +44,7 @@ if(!empty($_GET['status']) AND $_GET['status'] == '2') {
                 document.getElementById('tworzenie_uz').style.display = status1;
                 document.getElementById('form_nav_uz_a1').style.display = status2;
                 document.getElementById('form_nav_uz_b1').style.display = status1;
-            }                
+            }                            
         </script>
     </head>
     <body<?php echo " $form_wys"; ?>>        
