@@ -25,12 +25,12 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <table>
                                     <tr>
                                         <td class="us_bazowy">Login:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="login_uz" required></td>
+                                        <td><input class="us_pod_tekst" type="text" name="login_uz" minlength="5" required></td>
                                         <td class="us_form_adn">Login musi mieć minimum 5 znaków.</td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz1" required></td>
+                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz1" minlength="5" required></td>
                                         <td class="us_form_adn">Hasło musi mieć minimum 5 znaków.</td>
                                     </tr>
                                     <tr>
@@ -45,7 +45,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Nazwisko:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" required></td>
+                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" required></td>
                                         <td class="us_form_adn"></td>
                                     </tr>
                                     <tr>
