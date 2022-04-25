@@ -71,8 +71,23 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             VALUES (NULL, '$_POST[login_uz]', '$haslo', '$_POST[imie_uz]', '$_POST[nazwisko_uz]', '$_POST[email_uz]', '$akt_data', '$akt_godz', 0)";
         
         $sql = mysqli_query($pol_db, $q);
-        if(!$sql) die("Nie udało się zapisać nowego użytkownika - sprawdź połączenie z bazą danych!"); {
+        if(!$sql) die("Nie udało się zapisać nowego użytkownika - sprawdź połączenie z bazą danych!"); 
+        else {
+            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            $akt_data = gmdate('Y-m-d');
+            $akt_godz = gmdate('H:i:s');
+            $kom_zd = 'Utworzono nowego użytkownika o loginie: '. $_POST['login_uz'] .'.';
+            $q = "INSERT INTO `system_log` (`log_id`, `user_id`, `data`, `godzina`, `zdarzenie`)
+                    VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
+            $sql = mysqli_query($pol_db, $q);
 
+            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            // ---------------------------------------------------
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=5";
+                </script>
+            ';
         }
     }
 }
