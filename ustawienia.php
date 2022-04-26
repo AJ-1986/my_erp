@@ -5,7 +5,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         echo '
                     <h1 class="bazowy">Ustawienia</h1>
                     <p class="bazowy">
-                        Na tej stronie dokonasz wszelkich modyfikacji związanych z Twoimi informacjami dotyczącymi użytkowników, podmiotów.
+                        Na tej stronie dokonasz wszelkich modyfikacji związanych z Twoimi informacjami dotyczącymi użytkowników, podmiotów.<br>
+                        Funkcje takie jak tworzenie lub usuwanie użytkownika, podmiotu są dostępne tylko dla administratora.
                     </p>                    
         ';
         // zarządzanie użytkownikami
