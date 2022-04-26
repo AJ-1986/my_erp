@@ -12,7 +12,7 @@ if($_POST['logowanie'] == '1') {
     if(!$pol_db) die('Błąd z połączeniem - sprawdź dane do bazy danych');
     else {
         $haslo_md5 = md5($_POST['haslo_uz']);        
-        $q = "SELECT `id_uz`  FROM `uzytkownicy` WHERE `login` LIKE '$_POST[login_uz]' AND `haslo` LIKE '$haslo_md5'";
+        $q = "SELECT `id_uz`, `super_uz`  FROM `uzytkownicy` WHERE `login` LIKE '$_POST[login_uz]' AND `haslo` LIKE '$haslo_md5'";
         $sql = mysqli_query($pol_db, $q);
 
         if(!$query_data = mysqli_fetch_row($sql)) {
@@ -24,8 +24,9 @@ if($_POST['logowanie'] == '1') {
         }
         else {
 
-            // tworzenie zmiennej sesyjnej z id zalogowanego użytkownika
+            // tworzenie zmiennej sesyjnej z id zalogowanego użytkownika i typem konta
             $_SESSION['user_SQL_id'] = $query_data[0];
+            $_SESSION['user_SQL_type'] = $query_data[1];
             // --------------------------------------------------------- 
 
             // zapis informacji o logowaniu w logu systemu zdarzeń
