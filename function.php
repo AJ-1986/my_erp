@@ -55,7 +55,6 @@ if($_POST['logowanie'] == '1') {
             </script>';
         } 
     }
-
 mysqli_close($pol_db);
 }
 // -------------------------------------------
@@ -88,9 +87,10 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                 <script>
                     document.location="index.php?auth=1&ustawienia=1&status=5&logg_uz='. $_POST['login_uz'] .'";
                 </script>
-            ';
+            ';            
         }
-    }
+        mysqli_close($pol_db);
+    }    
 }
 // --------------------------------------
 
@@ -112,6 +112,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                 </script>
             ';
             }
+            mysqli_close($pol_db);
         }
         else {
             echo '
@@ -152,7 +153,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     document.location="index.php?auth=1&ustawienia=1&status=2";
                 </script>
             ';
-        }        
+        }
+        mysqli_close($pol_db);        
     }
 }
 
