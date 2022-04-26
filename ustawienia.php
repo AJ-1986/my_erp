@@ -98,15 +98,15 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Imię:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'"></td>                                
+                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'" required></td>                                
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Nazwisko:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'"></td>                                
+                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'" required></td>                                
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">E-mail:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'"></td>                                
+                                        <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'" required></td>                                
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Data rejestracji:</td>
@@ -138,11 +138,11 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <table>
                                     <tr>
                                         <td class="us_bazowy">Hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz1"></td>
+                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz1" minlength="5" required></td>
                                     </tr>
                                     <tr>
                                         <td class="us_bazowy">Powtórz hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz2"></td>
+                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz2" minlength="5" required></td>
                                     </tr>
                                 </table>
                                 <p class="bazowy">
@@ -179,37 +179,37 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             <table>
                                 <tr>
                                     <td class="us_bazowy">Nazwa podmiotu:</td>
-                                    <td><input class="us_pod_tekst" type="text" name="nazwa_podmiotu" value="'. $query_data[1] .'"></td>
+                                    <td><input class="us_pod_tekst" type="text" name="nazwa_podmiotu" value="'. $query_data[1] .'" required></td>
                                     <td class="us_form_adn">Skrócona nazwa widoczna tylko w panelu.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Pełna nazwa podmiotu:</td>
-                                    <td><textarea class="us_pel_nazwa_pod" name="pelna_nazwa_podmiotu" rows="4" cols="20">'. $query_data[2] .'</textarea></td>
+                                    <td><textarea class="us_pel_nazwa_pod" name="pelna_nazwa_podmiotu" rows="4" cols="20" required>'. $query_data[2] .'</textarea></td>
                                     <td class="us_form_adn">Pełna nazwa podmiotu, która jest widoczna na fakturach.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Adres:</td>
-                                    <td><input class="us_pod_tekst" type="text" name="adres_podmiotu" value="'. $query_data[3] .'"></td>
+                                    <td><input class="us_pod_tekst" type="text" name="adres_podmiotu" value="'. $query_data[3] .'" required></td>
                                     <td class="us_form_adn">Nazwa ulicy, na której jest prowadzona działalność.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Numer domu/lokalu:</td>
-                                    <td><input class="us_pod_tekst" type="text" name="numer_lok_podmiotu" value="'. $query_data[4] .'"></td>
+                                    <td><input class="us_pod_tekst" type="text" name="numer_lok_podmiotu" value="'. $query_data[4] .'" required></td>
                                     <td class="us_form_adn">Dopuszczalne różne formy numeracji. Np: "24/5 lok 3".</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Kod pocztowy:</td>
-                                    <td><input class="us_pod_tekst" type="text" name="kod_pocztowy_podmiotu" value="'. $query_data[5] .'"></td>
+                                    <td><input class="us_pod_tekst" type="text" name="kod_pocztowy_podmiotu" value="'. $query_data[5] .'" required></td>
                                     <td class="us_form_adn">Kod pocztowy miasta.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">Miasto:</td>
-                                    <td><input class="us_pod_tekst" type="text" name="miasto_podmiotu" value="'. $query_data[6] .'"></td>
+                                    <td><input class="us_pod_tekst" type="text" name="miasto_podmiotu" value="'. $query_data[6] .'" required></td>
                                     <td class="us_form_adn">Nazwa miasta, w którym prowadzona jest działalność.</td>
                                 </tr>
                                 <tr>
                                     <td class="us_bazowy">NIP:</td>
-                                    <td><input class="us_pod_tekst" type="text" name="nip_podmiotu" value="'. $query_data[7] .'"></td>
+                                    <td><input class="us_pod_tekst" type="text" name="nip_podmiotu" value="'. $query_data[7] .'" required></td>
                                     <td class="us_form_adn">Numer NIP (w jednym ciągu znaków bez myślników i spacji).</td>
                                 </tr>
                                 <tr>
