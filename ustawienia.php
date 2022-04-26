@@ -14,11 +14,18 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     <fieldset class="us_bazowy">
                         <legend class="us_bazowy">Zarządzanie użytkownikami</legend>
                         <p class="bazowy">Aby utworzyć nowego użytkownika lub edytować dane istniejącego wystarczy kliknąć w odpowiedni przycisk poniżej.</p>
-                        <p class="bazowy">
+                        <p class="bazowy">';
+            if($_SESSION['user_SQL_type'] == '1') {
+                echo '
                             <button id="form_nav_uz_a1" onClick="form_tw_nowego_uz(\'inline\', \'none\')">Utwórz nowego użytkownika</button><button id="form_nav_uz_b1" onClick="form_tw_nowego_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
+                ';
+            }
+        echo '                            
                             <button id="form_nav_uz_a2" onClick="form_ed_danych_uz(\'inline\', \'none\')">Edytuj swoje dane</button><button id="form_nav_uz_b2" onClick="form_ed_danych_uz(\'none\', \'inline\')">Ukryj</button>&nbsp;&nbsp;|&nbsp;
                             <button id="form_nav_uz_a3" onClick="form_ed_hasla_uz(\'inline\', \'none\')">Zmień swoje hasło</button><button id="form_nav_uz_b3" onClick="form_ed_hasla_uz(\'none\', \'inline\')">Ukryj</button>
-                        </p>
+                        </p>';
+            if($_SESSION['user_SQL_type'] == '1') {
+            echo '
                         <span id="tworzenie_uz">
                             <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>';
                             if($_GET['status'] == '5') {
@@ -81,8 +88,9 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                     <input class="us_bazowy_sub" type="submit" value="Utwórz nowego użytkownika">
                                 </p>
                             </form>
-                        </span>
-        ';
+                        </span>';
+            }
+        
         $q = "SELECT * FROM `uzytkownicy` WHERE `id_uz` LIKE '$_SESSION[user_SQL_id]'";
         $sql = mysqli_query($pol_db, $q);
         while($query_data = mysqli_fetch_row($sql)) {
