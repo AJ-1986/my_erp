@@ -206,19 +206,27 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <td class="uz_lista2">'. $query_data[6] .'</td>
                                 <td class="uz_lista2">'. $query_data[7] .'</td>
                                 <td class="uz_lista2">'. $typ_konta .'</td>
-                                <td class="uz_lista2">
+                                <td class="uz_lista2">';
+                                    if($query_data[8] != '1') {
+                                        echo '
                                     <form method="post" action="index.php?auth=1&ustawienia=1">
                                         <input type="hidden" name="autoryzacja_edytuj_uz" value="1">
                                         <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
                                         <input class="us_bazowy_sub" type="submit" value="Edytuj">
-                                    </form>
+                                    </form>';
+                                    }
+                                echo '
                                 </td>
-                                <td class="uz_lista2">
+                                <td class="uz_lista2">';
+                                    if($query_data[8] != '1') {
+                                        echo '
                                     <form method="post" action="function.php">
                                         <input type="hidden" name="autoryzacja_usun_uz" value="1">
                                         <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
                                         <input class="us_bazowy_usun_sub" type="submit" value="Usuń">
-                                    </form>
+                                    </form>';
+                                    }
+                                echo '
                                 </td>
                             </tr>
                             ';
