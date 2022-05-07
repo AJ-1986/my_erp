@@ -178,7 +178,10 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             $q = "SELECT * FROM `uzytkownicy` WHERE `id_uz` LIKE '$_POST[id_uz]'";
                             $sql = mysqli_query($pol_db, $q);
                             while($query_data = mysqli_fetch_row($sql)) {
-                                echo '                                            
+                                echo '
+                                                <p class="bazowy">
+                                                    Za pomocą tego formularza edytujesz dane użytkownika z poniższej listy.
+                                                </p>                                            
                                                 <form method="post" action="function.php">
                                                     <input type="hidden" name="aktualizacja_danych_uzytkownika2" value="1">
                                                     <input type="hidden" name="id_uzytkownika2" value="'. $query_data[0] .'">
@@ -210,17 +213,18 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                                         </tr>
                                                     </table>
                                                     <p class="bazowy">
-                                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
-                                if($_GET['status'] == '6') {
-                                    echo '
-                                                        &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
-                                    ';
-                                }
-                                echo '
-                                                    </p></form>
-                                ';
-                            }
+                                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">
+                                                    </p></form>';    
+                                
+                                }                                
                         }
+                        if($_GET['status'] == '6') {
+                            echo '
+                                            <p class="bazowy">
+                                                <font color="#025802"><b>Modyfikacja danych dla użytkownika <font color="#ffffff"><u>'. $_GET['u_z'] .'</u></font> została zapisana!</b></font>
+                                            </p>
+                            ';
+                        }   
                         echo '
                         <table class="uz_lista">
                             <tr>

@@ -183,7 +183,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             // ---------------------------------------------------
             echo '
                 <script>
-                    document.location="index.php?auth=1&ustawienia=1&status=6";
+                    document.location="index.php?auth=1&ustawienia=1&status=6&u_z='. $_POST['login_uzytkownika2'] .'";
                 </script>
             ';
         }
