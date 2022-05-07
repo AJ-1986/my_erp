@@ -158,6 +158,39 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     }
 }
 
+// funkcja aktualizuje dane uzytkownika przez administratora
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['aktualizacja_danych_uzytkownika2'] == '1') {
+
+        $q = "UPDATE `uzytkownicy` SET `imie` = '$_POST[imie_uz]', 
+                `nazwisko` = '$_POST[nazwisko_uz]', 
+                `e-mail` = '$_POST[email_uz]' 
+                WHERE `uzytkownicy`.`id_uz` = '$_POST[id_uzytkownika2]'"; 
+        
+        $sql = mysqli_query($pol_db, $q);
+
+        if(!$sql) die('Coś poszło nie tak z aktualizacją danych użytkownika - sprawdź połączenie z bazą danych '); 
+        else {
+            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            $akt_data = gmdate('Y-m-d');
+            $akt_godz = gmdate('H:i:s');
+            $kom_zd = 'Zaktualizowano dane użytkownika o loginie: '. $_POST['login_uzytkownika2'] .'.';
+            $q = "INSERT INTO `system_log` (`log_id`, `user_id`, `data`, `godzina`, `zdarzenie`)
+                    VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
+            $sql = mysqli_query($pol_db, $q);
+
+            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            // ---------------------------------------------------
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=6";
+                </script>
+            ';
+        }
+        mysqli_close($pol_db);        
+    }
+}
+
 // funkcja aktualizuje dane podmiotu
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_danych_podmiotu'] == '1') {
