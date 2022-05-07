@@ -173,7 +173,55 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                 // lista zarejestrownych użytkowników (widoczna tylko dla admina)
                     if($_SESSION['user_SQL_type'] == '1') {
                         echo '
-                        <hr>
+                        <hr>';
+                        if($_POST['autoryzacja_edytuj_uz'] == '1') {
+                            $q = "SELECT * FROM `uzytkownicy` WHERE `id_uz` LIKE '$_POST[id_uz]'";
+                            $sql = mysqli_query($pol_db, $q);
+                            while($query_data = mysqli_fetch_row($sql)) {
+                                echo '                                            
+                                                <form method="post" action="function.php">
+                                                    <input type="hidden" name="aktualizacja_danych_uzytkownika2" value="1">
+                                                    <input type="hidden" name="id_uzytkownika2" value="'. $query_data[0] .'">
+                                                    <input type="hidden" name="login_uzytkownika2" value="'. $query_data[1] .'">
+                                                    <table>
+                                                        <tr>
+                                                            <td class="us_bazowy">Login:</td>
+                                                            <td class="us_bazowy2">'. $query_data[1] .' (nie podlega zmianom)</td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Imię:</td>
+                                                            <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'" required></td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Nazwisko:</td>
+                                                            <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'" required></td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">E-mail:</td>
+                                                            <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'" required></td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Data rejestracji:</td>
+                                                            <td class="us_bazowy2">'. $query_data[6] .'</td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Godzina rejestracji:</td>
+                                                            <td class="us_bazowy2">'. $query_data[7] .'</td>                                
+                                                        </tr>
+                                                    </table>
+                                                    <p class="bazowy">
+                                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
+                                if($_GET['status'] == '6') {
+                                    echo '
+                                                        &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                                    ';
+                                }
+                                echo '
+                                                    </p></form>
+                                ';
+                            }
+                        }
+                        echo '
                         <table class="uz_lista">
                             <tr>
                                 <td class="uz_lista_tytul" colspan="9">Aktualna lista użytkowników systemu</td>
