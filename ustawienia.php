@@ -173,7 +173,10 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                 // lista zarejestrownych użytkowników (widoczna tylko dla admina)
                     if($_SESSION['user_SQL_type'] == '1') {
                         echo '
-                        <table>
+                        <table class="uz_lista">
+                            <tr>
+                                <td class="uz_lista_tytul" colspan="9">Aktualna lista użytkowników systemu</td>
+                            </tr>
                             <tr class="uz_lista">
                                 <td class="uz_lista1">Login</td>
                                 <td class="uz_lista1">Imię</td>
@@ -182,11 +185,42 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <td class="uz_lista1">Data rejestracji</td>
                                 <td class="uz_lista1">Godzina rejestracji</td>
                                 <td class="uz_lista1">Typ konta:</td>
-                                <td class="uz_lista1">Akcja</td>
+                                <td class="uz_lista1" colspan="2">Akcja</td>
                             </tr>';
                         $q = "SELECT * FROM `uzytkownicy`";
                         $sql = mysqli_query($pol_db, $q);
                         while($query_data = mysqli_fetch_row($sql)) {
+                            if($query_data[8] == '1') {
+                                $typ_konta = 'Administrator';
+                            }
+                            else {
+                                $typ_konta = 'Zwykły użytkownik';
+                            }
+                            echo '
+                            <tr class="uz_lista">
+                                <td class="uz_lista2">'. $query_data[1] .'</td>
+                                <td class="uz_lista2">'. $query_data[3] .'</td>
+                                <td class="uz_lista2">'. $query_data[4] .'</td>
+                                <td class="uz_lista2">'. $query_data[5] .'</td>
+                                <td class="uz_lista2">'. $query_data[6] .'</td>
+                                <td class="uz_lista2">'. $query_data[7] .'</td>
+                                <td class="uz_lista2">'. $typ_konta .'</td>
+                                <td class="uz_lista2">
+                                    <form method="post" action="index.php?auth=1&ustawienia=1">
+                                        <input type="hidden" name="autoryzacja_edytuj_uz" value="1">
+                                        <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
+                                        <input class="us_bazowy_sub" type="submit" value="Edytuj">
+                                    </form>
+                                </td>
+                                <td class="uz_lista2">
+                                    <form method="post" action="function.php">
+                                        <input type="hidden" name="autoryzacja_usun_uz" value="1">
+                                        <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
+                                        <input class="us_bazowy_usun_sub" type="submit" value="Usuń">
+                                    </form>
+                                </td>
+                            </tr>
+                            ';
                         }    
                         echo '
                         </table>
