@@ -272,10 +272,10 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <td class="uz_lista2">';
                                     if($query_data[8] != '1') {
                                         echo '
-                                    <form method="post" action="function.php">
+                                    <form id="form_usun_uz" method="post" action="function.php">
                                         <input type="hidden" name="autoryzacja_usun_uz" value="1">
                                         <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
-                                        <input class="us_bazowy_usun_sub" type="submit" value="Usuń">
+                                        <input type="button" class="us_bazowy_usun_sub" onClick="usun_uz(\''. $query_data[1] .'\')" value="Usuń">
                                     </form>';
                                     }
                                 echo '

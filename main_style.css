@@ -216,7 +216,7 @@ input[type=submit].us_bazowy_sub {
 input[type=submit].us_bazowy_sub:hover {
     background-color: gold;
 }
-input[type=submit].us_bazowy_usun_sub {
+input[type=button].us_bazowy_usun_sub {
     transition-duration: 0.4s;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -228,7 +228,7 @@ input[type=submit].us_bazowy_usun_sub {
     border-radius: 3px;
 
 }
-input[type=submit].us_bazowy_usun_sub:hover {
+input[type=button].us_bazowy_usun_sub:hover {
     background-color: rgb(255, 0, 0);
 }
 /* ------------------------------------- */

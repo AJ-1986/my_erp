@@ -191,6 +191,13 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     }
 }
 
+// funkcja usuwa użytkownika z bazy danych
+if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
+    if($_POST['autoryzacja_usun_uz'] == '1') {
+        echo 'Zwykły tekst';
+    }
+}
+
 // funkcja aktualizuje dane podmiotu
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
     if($_POST['aktualizacja_danych_podmiotu'] == '1') {
