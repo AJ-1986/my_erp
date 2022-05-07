@@ -172,7 +172,25 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                 
                 // lista zarejestrownych użytkowników (widoczna tylko dla admina)
                     if($_SESSION['user_SQL_type'] == '1') {
-                        
+                        echo '
+                        <table>
+                            <tr class="uz_lista">
+                                <td class="uz_lista1">Login</td>
+                                <td class="uz_lista1">Imię</td>
+                                <td class="uz_lista1">Nazwisko</td>
+                                <td class="uz_lista1">E-mail</td>
+                                <td class="uz_lista1">Data rejestracji</td>
+                                <td class="uz_lista1">Godzina rejestracji</td>
+                                <td class="uz_lista1">Typ konta:</td>
+                                <td class="uz_lista1">Akcja</td>
+                            </tr>';
+                        $q = "SELECT * FROM `uzytkownicy`";
+                        $sql = mysqli_query($pol_db, $q);
+                        while($query_data = mysqli_fetch_row($sql)) {
+                        }    
+                        echo '
+                        </table>
+                        ';
                     }
                 // ----------------------------------
 
