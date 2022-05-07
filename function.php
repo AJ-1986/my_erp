@@ -73,7 +73,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         $sql = mysqli_query($pol_db, $q);
         if(!$sql) die("Nie udało się zapisać nowego użytkownika - sprawdź połączenie z bazą danych!"); 
         else {
-            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            // zapis informacji o zmianach w logu systemu zdarzeń
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Utworzono nowego użytkownika o loginie: '. $_POST['login_uz'] .'.';
@@ -81,7 +81,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            if(!$sql) die('Coś poszło nie tak z zapisaniem logu... sprawdź bazę danych');            
             // ---------------------------------------------------
             echo '
                 <script>
@@ -138,7 +138,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
         if(!$sql) die('Coś poszło nie tak z aktualizacją danych użytkownika - sprawdź połączenie z bazą danych '); 
         else {
-            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            // zapis informacji o zmianach w logu systemu zdarzeń
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Zaktualizowano dane użytkownika o loginie: '. $_POST['login_uzytkownika'] .'.';
@@ -146,7 +146,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            if(!$sql) die('Coś poszło nie tak z zapisaniem logu... sprawdź bazę danych');            
             // ---------------------------------------------------
             echo '
                 <script>
@@ -171,7 +171,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
         if(!$sql) die('Coś poszło nie tak z aktualizacją danych użytkownika - sprawdź połączenie z bazą danych '); 
         else {
-            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            // zapis informacji o zmianach w logu systemu zdarzeń
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Zaktualizowano dane użytkownika o loginie: '. $_POST['login_uzytkownika2'] .'.';
@@ -179,7 +179,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            if(!$sql) die('Coś poszło nie tak z zapisaniem logu... sprawdź bazę danych');            
             // ---------------------------------------------------
             echo '
                 <script>
@@ -209,7 +209,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak... sprawdź bazę danych');            
+            if(!$sql) die('Coś poszło nie tak z zapisaniem logu... sprawdź bazę danych');            
             // ---------------------------------------------------
             echo '
                 <script>
@@ -238,9 +238,9 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         
         $sql = mysqli_query($pol_db, $q);
 
-        if(!$sql) die('Coś poszło nie tak - sprawdź połączenie z bazą danych'); 
+        if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych'); 
         else {
-            // zapis informacji o zmianach danych podmiotu w logu systemu zdarzeń
+            // zapis informacji o zmianach w logu systemu zdarzeń
             $akt_data = gmdate('Y-m-d');
             $akt_godz = gmdate('H:i:s');
             $kom_zd = 'Zaktualizowano dane podmiotu: '. $_POST['nazwa_podmiotu'] .'.';
@@ -248,7 +248,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                     VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
             $sql = mysqli_query($pol_db, $q);
 
-            if(!$sql) die('Coś poszło nie tak z aktualizacją danych podmiotu... sprawdź bazę danych');            
+            if(!$sql) die('Coś poszło nie tak z zapisaniem logu... sprawdź bazę danych');            
             // ---------------------------------------------------
             echo '
                 <script>
@@ -261,7 +261,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 }
 // ---------------------------------
 
-// zapisuje w zmiennych sesyjnych podmiot na którym aktualnie się pracuje
+// zapisuje w zmiennych sesyjnych podmiot, na którym aktualnie się pracuje
 if($_POST['pod_f'] == '1') {
     $_SESSION['podmiot_id'] = $_POST['podmiot'];    
     echo '
@@ -270,7 +270,7 @@ if($_POST['pod_f'] == '1') {
     </script>';
 }
 
-// funkcja odpowiedzialna za wylogowanie
+// funkcja odpowiedzialna za wylogowanie i zamknięcie aktywnej sesji
 if($_GET['wyloguj'] == '1') {
     session_destroy();
     echo '
