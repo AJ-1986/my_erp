@@ -44,6 +44,13 @@ if(!empty($_GET['status']) AND $_GET['status'] == '5') {
                 document.getElementById('tworzenie_uz').style.display = status1;
                 document.getElementById('form_nav_uz_a1').style.display = status2;
                 document.getElementById('form_nav_uz_b1').style.display = status1;
+            }
+            function usun_uz(log_uz, numer_form) {
+                let komunikat = "Zamierzasz usunąć użytkownika: '"+log_uz+"'!\nŻeby usunąć użytkownika naciśnij 'OK'.";
+                if(confirm(komunikat) == true) {
+                    var nazwa_formularza = "form_usun_uz"+numer_form;
+                    document.getElementById(nazwa_formularza).submit();
+                }                
             }                            
         </script>
     </head>

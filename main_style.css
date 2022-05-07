@@ -128,6 +128,41 @@ legend.us_bazowy {
     padding: 10px 10px;
     border: 1px solid black;
 }
+table.uz_lista {
+    background-color: white;
+    border: 1px solid black;
+}
+tr.uz_lista:nth-child(odd) {
+    background-color: rgb(201, 201, 201);
+}
+  
+tr.uz_lista:nth-child(even) {
+    background-color: rgb(182, 182, 182);
+}
+td.uz_lista_tytul {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(82, 82, 82);
+
+}
+td.uz_lista1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: darkmagenta;
+    color: white;
+    padding: 15px 15px;    
+}
+td.uz_lista2 {    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;    
+    color: rgb(0, 0, 0);
+    padding: 5px 5px;    
+}
 td.us_bazowy {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
@@ -180,6 +215,21 @@ input[type=submit].us_bazowy_sub {
 }
 input[type=submit].us_bazowy_sub:hover {
     background-color: gold;
+}
+input[type=button].us_bazowy_usun_sub {
+    transition-duration: 0.4s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: rgb(196, 19, 19);
+    color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+input[type=button].us_bazowy_usun_sub:hover {
+    background-color: rgb(255, 0, 0);
 }
 /* ------------------------------------- */
 

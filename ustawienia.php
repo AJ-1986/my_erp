@@ -168,7 +168,137 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             }
                 echo '    
                             </form>
-                        </span>
+                        </span>';
+                
+                // lista zarejestrownych użytkowników (widoczna tylko dla admina)
+                    if($_SESSION['user_SQL_type'] == '1') {
+                        echo '
+                        <hr>';
+                        if($_POST['autoryzacja_edytuj_uz'] == '1') {
+                            $q = "SELECT * FROM `uzytkownicy` WHERE `id_uz` LIKE '$_POST[id_uz]'";
+                            $sql = mysqli_query($pol_db, $q);
+                            while($query_data = mysqli_fetch_row($sql)) {
+                                echo '
+                                                <p class="bazowy">
+                                                    Za pomocą tego formularza edytujesz dane użytkownika z poniższej listy.
+                                                </p>                                            
+                                                <form method="post" action="function.php">
+                                                    <input type="hidden" name="aktualizacja_danych_uzytkownika2" value="1">
+                                                    <input type="hidden" name="id_uzytkownika2" value="'. $query_data[0] .'">
+                                                    <input type="hidden" name="login_uzytkownika2" value="'. $query_data[1] .'">
+                                                    <table>
+                                                        <tr>
+                                                            <td class="us_bazowy">Login:</td>
+                                                            <td class="us_bazowy2">'. $query_data[1] .' (nie podlega zmianom)</td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Imię:</td>
+                                                            <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'" required></td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Nazwisko:</td>
+                                                            <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'" required></td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">E-mail:</td>
+                                                            <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'" required></td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Data rejestracji:</td>
+                                                            <td class="us_bazowy2">'. $query_data[6] .'</td>                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="us_bazowy">Godzina rejestracji:</td>
+                                                            <td class="us_bazowy2">'. $query_data[7] .'</td>                                
+                                                        </tr>
+                                                    </table>
+                                                    <p class="bazowy">
+                                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">
+                                                    </p></form>';    
+                                
+                                }                                
+                        }
+                        if($_GET['status'] == '6') {
+                            echo '
+                                            <p class="bazowy">
+                                                <font color="#025802"><b>Modyfikacja danych dla użytkownika <font color="#ffffff"><u>'. $_GET['u_z'] .'</u></font> została zapisana!</b></font>
+                                            </p>
+                            ';
+                        }
+                        if($_GET['status'] == '7') {
+                            echo '
+                                            <p class="bazowy">
+                                                <font color="#025802"><b>Poprawnie usunęto użytkownika: <font color="#ffffff"><u>'. $_GET['u_z'] .'</u></font>.</b></font>
+                                            </p>
+                            ';
+                        }   
+                        echo '
+                        <table class="uz_lista">
+                            <tr>
+                                <td class="uz_lista_tytul" colspan="9">Aktualna lista użytkowników systemu</td>
+                            </tr>
+                            <tr class="uz_lista">
+                                <td class="uz_lista1">Login</td>
+                                <td class="uz_lista1">Imię</td>
+                                <td class="uz_lista1">Nazwisko</td>
+                                <td class="uz_lista1">E-mail</td>
+                                <td class="uz_lista1">Data rej.</td>
+                                <td class="uz_lista1">Godzina rej.</td>
+                                <td class="uz_lista1">Typ konta:</td>
+                                <td class="uz_lista1" colspan="2">Akcja</td>
+                            </tr>';
+                        $q = "SELECT * FROM `uzytkownicy`";
+                        $sql = mysqli_query($pol_db, $q);
+                        while($query_data = mysqli_fetch_row($sql)) {
+                            if($query_data[8] == '1') {
+                                $typ_konta = 'Administrator';
+                            }
+                            else {
+                                $typ_konta = 'Zwykły użytkownik';
+                            }
+                            echo '
+                            <tr class="uz_lista">
+                                <td class="uz_lista2">'. $query_data[1] .'</td>
+                                <td class="uz_lista2">'. $query_data[3] .'</td>
+                                <td class="uz_lista2">'. $query_data[4] .'</td>
+                                <td class="uz_lista2">'. $query_data[5] .'</td>
+                                <td class="uz_lista2">'. $query_data[6] .'</td>
+                                <td class="uz_lista2">'. $query_data[7] .'</td>
+                                <td class="uz_lista2">'. $typ_konta .'</td>
+                                <td class="uz_lista2">';
+                                    if($query_data[8] != '1') {
+                                        echo '
+                                    <form method="post" action="index.php?auth=1&ustawienia=1">
+                                        <input type="hidden" name="autoryzacja_edytuj_uz" value="1">
+                                        <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
+                                        <input class="us_bazowy_sub" type="submit" value="Edytuj">
+                                    </form>';
+                                    }
+                                echo '
+                                </td>
+                                <td class="uz_lista2">';
+                                    if($query_data[8] != '1') {
+                                        $numer_form++;
+                                        echo '
+                                    <form id="form_usun_uz'. $numer_form .'" method="post" action="function.php">
+                                        <input type="hidden" name="autoryzacja_usun_uz" value="1">
+                                        <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
+                                        <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
+                                        <input type="button" class="us_bazowy_usun_sub" onClick="usun_uz(\''. $query_data[1] .'\', \''. $numer_form .'\')" value="Usuń">
+                                    </form>';
+                                    }
+                                echo '
+                                </td>
+                            </tr>
+                            ';
+                        }    
+                        echo '
+                        </table><hr>
+                        ';
+                    }
+                // ----------------------------------
+
+                echo '
                     </fieldset>
                     <p>&nbsp;</p>
         ';
