@@ -71,7 +71,7 @@ if(!empty($_GET['status']) AND $_GET['status'] == '5') {
             <div class="left_site">
                 <span class="index_left_podmiot">
                     <p class="index_left">
-                        Aktualnie pracujesz na podmiocie:
+                        Aktualnie pracujesz na podmiocie:<br>
                         <?php
                             // pobieranie podmiotów z bazy danych
                                 $q = "SELECT `nazwa_podmiotu` FROM `podmioty` WHERE `id_podmiotu` LIKE '$_SESSION[podmiot_id]'";
