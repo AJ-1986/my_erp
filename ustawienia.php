@@ -168,7 +168,15 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             }
                 echo '    
                             </form>
-                        </span>
+                        </span>';
+                
+                // lista zarejestrownych użytkowników (widoczna tylko dla admina)
+                    if($_SESSION['user_SQL_type'] == '1') {
+                        
+                    }
+                // ----------------------------------
+
+                echo '
                     </fieldset>
                     <p>&nbsp;</p>
         ';
