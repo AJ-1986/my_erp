@@ -173,6 +173,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                 // lista zarejestrownych użytkowników (widoczna tylko dla admina)
                     if($_SESSION['user_SQL_type'] == '1') {
                         echo '
+                        <hr>
                         <table class="uz_lista">
                             <tr>
                                 <td class="uz_lista_tytul" colspan="9">Aktualna lista użytkowników systemu</td>
@@ -182,8 +183,8 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 <td class="uz_lista1">Imię</td>
                                 <td class="uz_lista1">Nazwisko</td>
                                 <td class="uz_lista1">E-mail</td>
-                                <td class="uz_lista1">Data rejestracji</td>
-                                <td class="uz_lista1">Godzina rejestracji</td>
+                                <td class="uz_lista1">Data rej.</td>
+                                <td class="uz_lista1">Godzina rej.</td>
                                 <td class="uz_lista1">Typ konta:</td>
                                 <td class="uz_lista1" colspan="2">Akcja</td>
                             </tr>';
@@ -223,7 +224,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             ';
                         }    
                         echo '
-                        </table>
+                        </table><hr>
                         ';
                     }
                 // ----------------------------------
