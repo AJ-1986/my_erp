@@ -224,6 +224,13 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                                 <font color="#025802"><b>Modyfikacja danych dla użytkownika <font color="#ffffff"><u>'. $_GET['u_z'] .'</u></font> została zapisana!</b></font>
                                             </p>
                             ';
+                        }
+                        if($_GET['status'] == '7') {
+                            echo '
+                                            <p class="bazowy">
+                                                <font color="#025802"><b>Poprawnie usunęto użytkownika: <font color="#ffffff"><u>'. $_GET['u_z'] .'</u></font>.</b></font>
+                                            </p>
+                            ';
                         }   
                         echo '
                         <table class="uz_lista">
@@ -271,11 +278,13 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                 </td>
                                 <td class="uz_lista2">';
                                     if($query_data[8] != '1') {
+                                        $numer_form++;
                                         echo '
-                                    <form id="form_usun_uz" method="post" action="function.php">
+                                    <form id="form_usun_uz'. $numer_form .'" method="post" action="function.php">
                                         <input type="hidden" name="autoryzacja_usun_uz" value="1">
-                                        <input type="hidden" name="id_uz" value="'. $query_data[0] .'">
-                                        <input type="button" class="us_bazowy_usun_sub" onClick="usun_uz(\''. $query_data[1] .'\')" value="Usuń">
+                                        <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
+                                        <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
+                                        <input type="button" class="us_bazowy_usun_sub" onClick="usun_uz(\''. $query_data[1] .'\', \''. $numer_form .'\')" value="Usuń">
                                     </form>';
                                     }
                                 echo '

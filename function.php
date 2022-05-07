@@ -193,8 +193,31 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
 
 // funkcja usuwa użytkownika z bazy danych
 if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
-    if($_POST['autoryzacja_usun_uz'] == '1') {
-        echo 'Zwykły tekst';
+    if($_POST['autoryzacja_usun_uz'] == '1') {        
+        
+        $q = "DELETE FROM `uzytkownicy` WHERE `uzytkownicy`.`id_uz` = '$_POST[id_uzytkownika]'"; 
+        
+        $sql = mysqli_query($pol_db, $q);
+
+        if(!$sql) die('Coś poszło nie tak - sprawdź połączenie z bazą danych'); 
+        else {
+            // zapis informacji o zmianach w logu systemu zdarzeń
+            $akt_data = gmdate('Y-m-d');
+            $akt_godz = gmdate('H:i:s');
+            $kom_zd = 'Usunięto użytkownika o loginie: '. $_POST['login_uzytkownika'] .'.';
+            $q = "INSERT INTO `system_log` (`log_id`, `user_id`, `data`, `godzina`, `zdarzenie`)
+                    VALUES (NULL, '$_SESSION[user_SQL_id]', '$akt_data', '$akt_godz', '$kom_zd')";
+            $sql = mysqli_query($pol_db, $q);
+
+            if(!$sql) die('Coś poszło nie tak... sprawdź bazę danych');            
+            // ---------------------------------------------------
+            echo '
+                <script>
+                    document.location="index.php?auth=1&ustawienia=1&status=7&u_z='. $_POST['login_uzytkownika'] .'";
+                </script>
+            ';
+        }
+        mysqli_close($pol_db); 
     }
 }
 
