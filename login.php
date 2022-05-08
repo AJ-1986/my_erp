@@ -19,6 +19,12 @@ global $pol_db;
         <link rel="stylesheet" href="main_style.css">
     </head>
     <body>
+        <p class="demo2">
+            <br>
+            Wersja DEMO. Narzędzie w trakcie rozwoju. Codziennie nowe funkcje!<br>
+            Więcej na <a href="https://github.com/AJ-1986/my_erp/tree/my_erp_1.0">https://github.com/AJ-1986/my_erp/tree/my_erp_1.0</a><br>
+            Login: admin | hasło: admin<br>&nbsp;
+        </p>
         <div class="login_main_page">
             <div class="login_header">
                 <h1 class="login_h1">MY_ERP - logowanie</h1>

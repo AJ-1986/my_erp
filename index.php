@@ -117,7 +117,8 @@ if(!empty($_GET['status']) AND $_GET['status'] == '5') {
                 <p class="demo">
                     <br>
                     Wersja DEMO. Narzędzie w trakcie rozwoju. Codziennie nowe funkcje!<br>
-                    Więcej na <a href="https://github.com/AJ-1986/my_erp/tree/my_erp_1.0">https://github.com/AJ-1986/my_erp/tree/my_erp_1.0</a><br>&nbsp;
+                    Więcej na <a href="https://github.com/AJ-1986/my_erp/tree/my_erp_1.0">https://github.com/AJ-1986/my_erp/tree/my_erp_1.0</a><br>
+                    Login: admin | hasło: admin<br>&nbsp;
                 </p>
                 <?php
                     if($_GET['auth'] == '1') {
