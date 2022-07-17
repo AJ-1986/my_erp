@@ -100,7 +100,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             echo '
                         <span id="ed_danych_uz">
                             <fieldset class="us_bazowy2">
-                                <legend class="us_bazowy">Edacja danych użytkownika</legend>
+                                <legend class="us_bazowy">Edycja danych użytkownika</legend>
                                 <form method="post" action="function.php">
                                     <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
                                     <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
