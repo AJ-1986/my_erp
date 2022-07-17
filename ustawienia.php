@@ -90,7 +90,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                                         <input class="us_bazowy_sub" type="submit" value="Utwórz nowego użytkownika">
                                     </p>
                                 </form>
-                            </fieldset>
+                            </fieldset><br>
                         </span>';
             }
         
@@ -144,38 +144,41 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             }
             echo '
                                 </form>
-                            </fieldset>
+                            </fieldset><br>
                         </span>
                         <span id="ed_hasla_uz">
-                            <p class="bazowy">Zmiana hasła dostępu do konta.</p>
-                            <form method="post" action="function.php">
-                                <input type="hidden" name="aktualizacja_hasla_uz" value="1">
-                                <input type="hidden" name="id_uzytkownika" value="'. $_SESSION['user_SQL_id'] .'">
-                                <table>
-                                    <tr>
-                                        <td class="us_bazowy">Hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz1" minlength="5" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Powtórz hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz2" minlength="5" required></td>
-                                    </tr>
-                                </table>
-                                <p class="bazowy">
-                                    <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';            
-            if($_GET['status'] == '3') {
-                echo '
-                                    &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
-                ';
-            }
-            if($_GET['status'] == '4') {
-                echo '
-                                    <br><br><font color="red"><b>Błąd! Pola formularza nie mogą być puste<br>oraz różnić się wprowadzonymi danymi</b></font>
-                ';
-            }
-                echo '    
-                            </form>
-                        </span>';
+                            <fieldset class="us_bazowy">
+                                <legend class="us_bazowy">Edycja hasła użytkownika</legend>
+                                <p class="bazowy">Zmiana hasła dostępu do konta.</p>
+                                <form method="post" action="function.php">
+                                    <input type="hidden" name="aktualizacja_hasla_uz" value="1">
+                                    <input type="hidden" name="id_uzytkownika" value="'. $_SESSION['user_SQL_id'] .'">
+                                    <table>
+                                        <tr>
+                                            <td class="us_bazowy">Hasło:</td>
+                                            <td><input class="us_pod_haslo" type="password" name="paswd_uz1" minlength="5" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Powtórz hasło:</td>
+                                            <td><input class="us_pod_haslo" type="password" name="paswd_uz2" minlength="5" required></td>
+                                        </tr>
+                                    </table>
+                                    <p class="bazowy">
+                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';            
+                if($_GET['status'] == '3') {
+                    echo '
+                                        &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                    ';
+                }
+                if($_GET['status'] == '4') {
+                    echo '
+                                        <br><br><font color="red"><b>Błąd! Pola formularza nie mogą być puste<br>oraz różnić się wprowadzonymi danymi</b></font>
+                    ';
+                }
+                    echo '    
+                                </form>
+                                </fieldset><br>
+                            </span>';
                 
                 // lista zarejestrownych użytkowników (widoczna tylko dla admina)
                     if($_SESSION['user_SQL_type'] == '1') {
