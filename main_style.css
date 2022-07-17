@@ -139,6 +139,20 @@ legend.us_bazowy {
     padding: 10px 10px;
     border: 1px solid black;
 }
+fieldset.us_bazowy2 {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgb(170, 170, 170);
+}
+legend.us_bazowy2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
 table.uz_lista {
     background-color: white;
     border: 1px solid black;

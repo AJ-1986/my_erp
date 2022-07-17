@@ -27,67 +27,70 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             if($_SESSION['user_SQL_type'] == '1') {
             echo '
                         <span id="tworzenie_uz">
-                            <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>';
-                            if($_GET['status'] == '5') {
-                            echo '
-                            <p class="bazowy"><font color="#025802"><b>Nowy użytkownik został utworzony!</b></font><br><br>
-                            Dane utworzonego użytkownika:</p>
-                            ';
-                            $q = "SELECT * FROM `uzytkownicy` WHERE `login` LIKE '$_GET[logg_uz]'";
-                            $sql = mysqli_query($pol_db, $q);
-
-                            while($query_data = mysqli_fetch_row($sql)) {
+                            <fieldset class="us_bazowy2">
+                                <legend class="us_bazowy">Tworzenie nowego użytkownika</legend>
+                                <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>';
+                                if($_GET['status'] == '5') {
                                 echo '
-                                <p class="bazowy">
-                                <b>Login:</b> <i>'. $query_data[1] .'</i>.<br>
-                                <b>Imię:</b> <i>'. $query_data[3] .'</i>.<br>
-                                <b>Nazwisko:</b> <i>'. $query_data[4] .'</i>.<br>
-                                <b>E-mail:</b> <i>'. $query_data[5] .'</i>.<br>
-                                <b>Data rejestracji:</b> <i>'. $query_data[6] .'</i>.<br>
-                                <b>Godzina rejestracji:</b> <i>'. $query_data[7] .'</i>.<br>
-                                </p>
-                                ';                                
+                                <p class="bazowy"><font color="#025802"><b>Nowy użytkownik został utworzony!</b></font><br><br>
+                                Dane utworzonego użytkownika:</p>
+                                ';
+                                $q = "SELECT * FROM `uzytkownicy` WHERE `login` LIKE '$_GET[logg_uz]'";
+                                $sql = mysqli_query($pol_db, $q);
+
+                                while($query_data = mysqli_fetch_row($sql)) {
+                                    echo '
+                                    <p class="bazowy">
+                                    <b>Login:</b> <i>'. $query_data[1] .'</i>.<br>
+                                    <b>Imię:</b> <i>'. $query_data[3] .'</i>.<br>
+                                    <b>Nazwisko:</b> <i>'. $query_data[4] .'</i>.<br>
+                                    <b>E-mail:</b> <i>'. $query_data[5] .'</i>.<br>
+                                    <b>Data rejestracji:</b> <i>'. $query_data[6] .'</i>.<br>
+                                    <b>Godzina rejestracji:</b> <i>'. $query_data[7] .'</i>.<br>
+                                    </p>
+                                    ';                                
+                                    }
                                 }
-                            }
-                            echo '
-                            <form method="post" action="function.php">
-                                <input type="hidden" name="tworzenie_nowego_uzytkownika" value="1">
-                                <table>
-                                    <tr>
-                                        <td class="us_bazowy">Login:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="login_uz" minlength="5" required></td>
-                                        <td class="us_form_adn">Login musi mieć minimum 5 znaków.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz1" minlength="5" required></td>
-                                        <td class="us_form_adn">Hasło musi mieć minimum 5 znaków.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Powtórz hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="haslo_uz2" required></td>
-                                        <td class="us_form_adn"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Imię:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" required></td>
-                                        <td class="us_form_adn"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Nazwisko:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" required></td>
-                                        <td class="us_form_adn"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">E-mail:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="email_uz" required></td>
-                                        <td class="us_form_adn"></td>
-                                    </tr>
-                                </table>
-                                <p class="bazowy">
-                                    <input class="us_bazowy_sub" type="submit" value="Utwórz nowego użytkownika">
-                                </p>
-                            </form>
+                                echo '
+                                <form method="post" action="function.php">
+                                    <input type="hidden" name="tworzenie_nowego_uzytkownika" value="1">
+                                    <table>
+                                        <tr>
+                                            <td class="us_bazowy">Login:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="login_uz" minlength="5" required></td>
+                                            <td class="us_form_adn">Login musi mieć minimum 5 znaków.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Hasło:</td>
+                                            <td><input class="us_pod_haslo" type="password" name="haslo_uz1" minlength="5" required></td>
+                                            <td class="us_form_adn">Hasło musi mieć minimum 5 znaków.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Powtórz hasło:</td>
+                                            <td><input class="us_pod_haslo" type="password" name="haslo_uz2" required></td>
+                                            <td class="us_form_adn"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Imię:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="imie_uz" required></td>
+                                            <td class="us_form_adn"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Nazwisko:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" required></td>
+                                            <td class="us_form_adn"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">E-mail:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="email_uz" required></td>
+                                            <td class="us_form_adn"></td>
+                                        </tr>
+                                    </table>
+                                    <p class="bazowy">
+                                        <input class="us_bazowy_sub" type="submit" value="Utwórz nowego użytkownika">
+                                    </p>
+                                </form>
+                            </fieldset><br>
                         </span>';
             }
         
@@ -96,79 +99,86 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
                         <span id="ed_danych_uz">
-                            <form method="post" action="function.php">
-                                <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
-                                <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
-                                <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
-                                <table>
-                                    <tr>
-                                        <td class="us_bazowy">Login:</td>
-                                        <td class="us_bazowy2">'. $query_data[1] .' (nie podlega zmianom)</td>                                
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Imię:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'" required></td>                                
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Nazwisko:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'" required></td>                                
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">E-mail:</td>
-                                        <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'" required></td>                                
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Data rejestracji:</td>
-                                        <td class="us_bazowy2">'. $query_data[6] .'</td>                                
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Godzina rejestracji:</td>
-                                        <td class="us_bazowy2">'. $query_data[7] .'</td>                                
-                                    </tr>
-                                </table>
-                                <p class="bazowy">
-                                    <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
-            if($_GET['status'] == '2') {
+                            <fieldset class="us_bazowy2">
+                                <legend class="us_bazowy">Edacja danych użytkownika</legend>
+                                <form method="post" action="function.php">
+                                    <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
+                                    <input type="hidden" name="id_uzytkownika" value="'. $query_data[0] .'">
+                                    <input type="hidden" name="login_uzytkownika" value="'. $query_data[1] .'">
+                                    <table>
+                                        <tr>
+                                            <td class="us_bazowy">Login:</td>
+                                            <td class="us_bazowy2">'. $query_data[1] .' (nie podlega zmianom)</td>                                
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Imię:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="imie_uz" value="'. $query_data[3] .'" required></td>                                
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Nazwisko:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="nazwisko_uz" value="'. $query_data[4] .'" required></td>                                
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">E-mail:</td>
+                                            <td><input class="us_pod_tekst" type="text" name="email_uz" value="'. $query_data[5] .'" required></td>                                
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Data rejestracji:</td>
+                                            <td class="us_bazowy2">'. $query_data[6] .'</td>                                
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Godzina rejestracji:</td>
+                                            <td class="us_bazowy2">'. $query_data[7] .'</td>                                
+                                        </tr>
+                                    </table>
+                                    <p class="bazowy">
+                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';    
+                if($_GET['status'] == '2') {
+                    echo '
+                                        &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                    ';
+                }
                 echo '
-                                    &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                                    </p>
                 ';
             }
             echo '
-                                </p>
-            ';
-        }
-        echo '
-                        </form></span>
+                                </form>
+                            </fieldset><br>
+                        </span>
                         <span id="ed_hasla_uz">
-                            <p class="bazowy">Zmiana hasła dostępu do konta.</p>
-                            <form method="post" action="function.php">
-                                <input type="hidden" name="aktualizacja_hasla_uz" value="1">
-                                <input type="hidden" name="id_uzytkownika" value="'. $_SESSION['user_SQL_id'] .'">
-                                <table>
-                                    <tr>
-                                        <td class="us_bazowy">Hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz1" minlength="5" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="us_bazowy">Powtórz hasło:</td>
-                                        <td><input class="us_pod_haslo" type="password" name="paswd_uz2" minlength="5" required></td>
-                                    </tr>
-                                </table>
-                                <p class="bazowy">
-                                    <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';            
-            if($_GET['status'] == '3') {
-                echo '
-                                    &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
-                ';
-            }
-            if($_GET['status'] == '4') {
-                echo '
-                                    <br><br><font color="red"><b>Błąd! Pola formularza nie mogą być puste<br>oraz różnić się wprowadzonymi danymi</b></font>
-                ';
-            }
-                echo '    
-                            </form>
-                        </span>';
+                            <fieldset class="us_bazowy2">
+                                <legend class="us_bazowy">Edycja hasła użytkownika</legend>
+                                <p class="bazowy">Zmiana hasła dostępu do konta.</p>
+                                <form method="post" action="function.php">
+                                    <input type="hidden" name="aktualizacja_hasla_uz" value="1">
+                                    <input type="hidden" name="id_uzytkownika" value="'. $_SESSION['user_SQL_id'] .'">
+                                    <table>
+                                        <tr>
+                                            <td class="us_bazowy">Hasło:</td>
+                                            <td><input class="us_pod_haslo" type="password" name="paswd_uz1" minlength="5" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="us_bazowy">Powtórz hasło:</td>
+                                            <td><input class="us_pod_haslo" type="password" name="paswd_uz2" minlength="5" required></td>
+                                        </tr>
+                                    </table>
+                                    <p class="bazowy">
+                                        <input class="us_bazowy_sub" type="submit" value="Zapisz zmiany">';            
+                if($_GET['status'] == '3') {
+                    echo '
+                                        &nbsp;&nbsp;|&nbsp;&nbsp; <font color="#025802"><b>Zmiany zostały zapisane!</b></font>
+                    ';
+                }
+                if($_GET['status'] == '4') {
+                    echo '
+                                        <br><br><font color="red"><b>Błąd! Pola formularza nie mogą być puste<br>oraz różnić się wprowadzonymi danymi</b></font>
+                    ';
+                }
+                    echo '    
+                                </form>
+                                </fieldset><br>
+                            </span>';
                 
                 // lista zarejestrownych użytkowników (widoczna tylko dla admina)
                     if($_SESSION['user_SQL_type'] == '1') {
