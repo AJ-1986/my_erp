@@ -27,7 +27,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
             if($_SESSION['user_SQL_type'] == '1') {
             echo '
                         <span id="tworzenie_uz">
-                            <fieldset class="us_bazowy">
+                            <fieldset class="us_bazowy2">
                                 <legend class="us_bazowy">Tworzenie nowego użytkownika</legend>
                                 <p class="bazowy">W celu utworzenia nowego użytkownika wypełnij wszystkie poniższe pola.</p>';
                                 if($_GET['status'] == '5') {
@@ -99,7 +99,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
         while($query_data = mysqli_fetch_row($sql)) {
             echo '
                         <span id="ed_danych_uz">
-                            <fieldset class="us_bazowy">
+                            <fieldset class="us_bazowy2">
                                 <legend class="us_bazowy">Edacja danych użytkownika</legend>
                                 <form method="post" action="function.php">
                                     <input type="hidden" name="aktualizacja_danych_uzytkownika" value="1">
@@ -147,7 +147,7 @@ if(!empty($_SESSION['log_id']) AND $_SESSION['log_ok'] == $_SESSION['log_id']) {
                             </fieldset><br>
                         </span>
                         <span id="ed_hasla_uz">
-                            <fieldset class="us_bazowy">
+                            <fieldset class="us_bazowy2">
                                 <legend class="us_bazowy">Edycja hasła użytkownika</legend>
                                 <p class="bazowy">Zmiana hasła dostępu do konta.</p>
                                 <form method="post" action="function.php">
